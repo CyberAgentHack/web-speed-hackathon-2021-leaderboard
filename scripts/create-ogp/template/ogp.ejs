@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OGP</title>
+    <style>
+      @import url('https://unpkg.com/ress/dist/ress.min.css');
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+      *,
+      *::before,
+      *::after {
+        font-family: 'Noto Sans JP', sans-serif;
+        box-sizing: border-box;
+      }
+
+      .outer {
+        width: 1200px;
+        height: 630px;
+        border: 24px double transparent;
+        background-image: linear-gradient(90deg, #1a1a1a, #1a1a1a),
+          linear-gradient(90deg, #845ec2, #a75bba, #c358ae, #d959a1, #ea5d92, #f66582, #fd7173, #ff8066);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+        background-color: #212121;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 32px;
+      }
+
+      .icon {
+        display: block;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        width: 300px;
+        height: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
+
+      .details {
+        flex-grow: 1;
+        flex-shrink: 1;
+        margin-left: 48px;
+        font-size: 48px;
+        text-shadow: 0 0 40px rgb(192 219 255 / 25%), 0 0 6px rgb(65 120 255 / 24%);
+        color: #fafafa;
+      }
+
+      .score-header {
+        font-weight: bold;
+      }
+
+      .heading {
+        line-height: 1.25;
+        background: linear-gradient(90deg, #b0a8b9, #ab9dbb, #a593bc, #9f88bd, #997ebf, #9373c0, #8c69c1, #845ec2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Fredoka One', cursive;
+        font-weight: normal;
+        font-size: 72px;
+        margin-bottom: 24px;
+      }
+
+      .matrix {
+        display: grid;
+        grid-template-columns: auto auto 1fr;
+        gap: 12px;
+        word-break: break-all;
+        white-space: wrap;
+        align-items: center;
+      }
+
+      .matrix-heading {
+        font-weight: bold;
+      }
+
+      .account {
+        padding-left: 1em;
+        text-indent: -1em;
+      }
+
+      .sup {
+        font-size: 75%;
+      }
+
+      .footnote {
+        margin-top: 24px;
+        font-size: 32px;
+        opacity: 0.85;
+        gap: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <img class="icon" width="500" height="500" src="https://github.com/<%= competitor.id %>.png?size=500" />
+      <div class="details">
+        <h3 class="heading">Web Speed<br />Hackathon 2021 mini</h3>
+        <div class="matrix">
+          <span class="matrix-heading">GitHub</span>
+          <span>|</span>
+          <span class="account">@<%= competitor.id %></span>
+          <span class="matrix-heading">SCORE</span>
+          <span>|</span>
+          <span><b><%= competitor.score %></b><span class="sup"> / 720.00</span></span>
+          <span class="matrix-heading">RANK</span>
+          <span>|</span>
+          <span><b><%= competitor.rank %> 位</b></span>
+        </div>
+        <div class="matrix footnote">
+          <span class="matrix-heading">計測日時</span>
+          <span>|</span>
+          <span><%= date %></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

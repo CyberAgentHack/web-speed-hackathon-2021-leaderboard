@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "license": "UNLICENSE",
+  "scripts": {
+    "build": "yarn workspaces run build",
+    "vrt:capture": "yarn workspace @web-speed-hackathon/vrt capture",
+    "vrt:detect": "yarn workspace @web-speed-hackathon/vrt detect",
+    "scoring": "yarn workspace @web-speed-hackathon/scoring start",
+    "update": "yarn workspace @web-speed-hackathon/update-leaderboard start",
+    "create-ogp": "yarn workspace @web-speed-hackathon/create-ogp start"
+  },
+  "workspaces": [
+    "scripts/*"
+  ]
+}

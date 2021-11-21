@@ -1,0 +1,23 @@
+pages:
+  - name: ホーム
+    path: /
+  - name: 投稿詳細 - 画像
+    path: /posts/01EXNV3BSJV18WFYBS87TP4NFC
+  - name: 投稿詳細 - 音声
+    path: /posts/01EX0SGMRHZP5JBA5JF2ZZQTP2
+  - name: 投稿詳細 - 動画
+    path: /posts/01EXH20KRBVP34RYHYDTSX8JS2
+  - name: ユーザー詳細
+    path: /users/mexicandraggle
+  - name: 利用規約
+    path: /terms
+viewports:
+  - name: Pixel 5
+    width: 393
+    height: 851
+  - name: Kindle Fire HDX
+    width: 800
+    height: 1280
+  - name: Desktop
+    width: 1280
+    height: 720

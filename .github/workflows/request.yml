@@ -1,0 +1,111 @@
+name: Request
+on:
+  issues:
+    types:
+      - opened
+  issue_comment:
+    types:
+      - created
+env:
+  TZ: 'Asia/Tokyo'
+jobs:
+  request:
+    runs-on: ubuntu-20.04
+    if: |
+      (contains(github.event.issue.labels.*.name, 'registration')) && (
+        (github.event_name == 'issues') || (
+          github.event_name == 'issue_comment' &&
+          !github.event.issue.pull_request &&
+          startsWith(github.event.comment.body, '/rerun') &&
+          github.actor == github.event.issue.user.login
+        )
+      )
+    steps:
+      - name: Initialize
+        uses: actions/github-script@v5
+        if: github.event_name == 'issues'
+        with:
+          script: |
+            github.rest.issues.update({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `[スコア] @${context.actor}`,
+            });
+      - name: Comment
+        uses: peter-evans/create-or-update-comment@v1.4.5
+        if: github.event_name == 'issues'
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            **@${{ github.actor }} ようこそ、Web Speed Hackathon 2021 mini へ！**
+
+            - :information_source: 計測中に、解決できない問題が発生した場合、`@CyberAgentHack/wsh-admin` に連絡してください
+              - 開催期間が長いため、ベストエフォートでの対応になることをご了承ください
+            - :racing_car: これから自動でスコアが計測されて、リーダーボードに反映されます
+              - よい結果が出たら、ぜひ採点結果を **#WebSpeedHackathon** で Twitter に投稿してください
+            - :memo: 開催期間中の参加記事や解説記事、大歓迎です！
+              - 他の人の解説記事や参加記事を読んで、更に高速なアプリを目指しましょう :raised_hands:
+      - name: Comment
+        uses: peter-evans/create-or-update-comment@v1.4.5
+        id: report-comment
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            :hourglass_flowing_sand: **計測する準備をしています**
+      - name: Parse issue's description
+        id: parse
+        uses: peter-murray/issue-forms-body-parser@v2.0.0
+        with:
+          issue_id: ${{ github.event.issue.number }}
+          label_marker_start: '{{'
+          label_marker_end: '}}'
+      - name: Create payload
+        uses: actions/github-script@v5.0.0
+        with:
+          script: |
+            const fs = require('fs');
+
+            const url = new URL(`${process.env.TARGET_URL}`);
+
+            const payload = {
+              id: context.actor,
+              url: url.href,
+              issue_number: context.issue.number,
+              report_comment_id: process.env.REPORT_COMMENT_ID,
+            };
+
+            if (!['http:', 'https:'].includes(url.protocol)) {
+              console.error('Invalid url: %s', payload.url);
+              process.exit(1);
+            }
+
+            fs.writeFileSync('/tmp/payload.json', JSON.stringify(payload), 'utf-8');
+        env:
+          TARGET_URL: ${{ fromJSON(steps.parse.outputs.payload).url }}
+          REPORT_COMMENT_ID: ${{ steps.report-comment.outputs.comment-id }}
+      - name: Upload payload
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: payload.json
+          path: /tmp/payload.json
+          retention-days: 1
+      - name: Failure message
+        if: failure()
+        uses: peter-evans/create-or-update-comment@v1.4.5
+        with:
+          comment-id: ${{ steps.report-comment.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            :exclamation: **登録内容を読み込めませんでした**
+
+            次を確認して、もう一度 issue を作り直してください
+
+            - URL が間違っていませんか
+              - `http://` もしくは `https://` から始まる URL を入力してください
+            - issue の description を編集していませんか
+              - issue の description から登録情報を読み込むため、編集しないでください
+
+            ---
+
+            :information_source: 登録内容を変更する場合は、issue を閉じて作り直してください

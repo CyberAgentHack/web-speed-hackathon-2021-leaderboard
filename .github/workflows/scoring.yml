@@ -490,7 +490,7 @@ jobs:
 
             @${{ fromJSON(needs.payload.outputs.result).id }} スコアを Twitter で共有してみませんか？
 
-            [![結果をツイートする](https://raw.githack.com/3846masa-tmp/github-actions-test/main/assets/tweet.png)](${{ steps.share-url.outputs.result }})
+            [![結果をツイートする](https://raw.githack.com/CyberAgentHack/web-speed-hackathon-2021-leaderboard/main/assets/tweet.png)](${{ steps.share-url.outputs.result }})
 
             ---
 

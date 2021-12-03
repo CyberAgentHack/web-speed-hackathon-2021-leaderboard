@@ -6,7 +6,7 @@
   "license": "UNLICENSE",
   "scripts": {
     "build": "tsc",
-    "detect": "reg-cli ./tmp/actual ./expected ./tmp/diff -M 0.12 -T 0.01 -I -J ./tmp/reg.json",
+    "detect": "reg-cli ./tmp/actual ./expected ./tmp/diff -M 0.15 -T 0.005 -I -J ./tmp/reg.json",
     "capture": "node dist/index.js"
   },
   "dependencies": {

@@ -2,7 +2,8 @@
 
 **"Web Speed Hackathon 2021 mini" は、非常に重たい Web アプリをチューニングして、いかに高速にするかを競う競技です。**
 
-架空の SNS サイト「CAwitter」のパフォーマンスを改善してください。
+今回のテーマは、架空の SNS サイト「CAwitter」です。
+「CAwitter」のパフォーマンスを改善してください。
 
 - デモサイト: https://web-speed-hackathon-2021.herokuapp.com/
 - 参加方法: https://github.com/CyberAgentHack/web-speed-hackathon-2021

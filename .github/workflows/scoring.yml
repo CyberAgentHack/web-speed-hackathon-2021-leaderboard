@@ -348,7 +348,7 @@ jobs:
 
             スコアは **${{ fromJSON(needs.scoring.outputs.result).result.score }}** です
 
-            :warning: VRT に問題があったため、リーダーボードには反映されません
+            :warning: VRT で差分があったため、リーダーボードには反映されません
 
             <details>
             <summary>buildInfo</summary>

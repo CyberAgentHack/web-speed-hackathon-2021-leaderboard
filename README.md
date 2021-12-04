@@ -23,6 +23,7 @@
 |3|**68.59**|<img alt="" width="50" height="50" src="https://github.com/ookam.png?size=100"/>|[@ookam](https://github.com/ookam)|[:link:](https://speed-2021.mx1.net/)|
 |4|**57.75**|<img alt="" width="50" height="50" src="https://github.com/mochi-sann.png?size=100"/>|[@mochi-sann](https://github.com/mochi-sann)|[:link:](https://cb-speedapp.herokuapp.com/)|
 |5|**56.36**|<img alt="" width="50" height="50" src="https://github.com/go-to-the-future.png?size=100"/>|[@go-to-the-future](https://github.com/go-to-the-future)|[:link:](https://web-speed-hackathon-2021-kr.herokuapp.com/)|
+|6|**45.98**|<img alt="" width="50" height="50" src="https://github.com/imamiya-masaki.png?size=100"/>|[@imamiya-masaki](https://github.com/imamiya-masaki)|[:link:](https://web-speed-hackathon-2021-anpan.herokuapp.com/)|
 
 <!-- leaderboard:end -->
 

@@ -19,11 +19,11 @@
 |Rank|Score||CompetitorId|URL|
 |:--:|:--:|:--:|:--|:--:|
 |1|**627.56**|<img alt="" width="50" height="50" src="https://github.com/3846masa.png?size=100"/>|[@3846masa](https://github.com/3846masa)|[:link:](https://sandbox-wsh-2021.an.r.appspot.com/)|
-|2|**78.26**|<img alt="" width="50" height="50" src="https://github.com/CyberAgentHack.png?size=100"/>|[@CyberAgentHack](https://github.com/CyberAgentHack)|[:link:](https://web-speed-hackathon-2021.herokuapp.com/)|
-|3|**68.59**|<img alt="" width="50" height="50" src="https://github.com/ookam.png?size=100"/>|[@ookam](https://github.com/ookam)|[:link:](https://speed-2021.mx1.net/)|
-|4|**57.75**|<img alt="" width="50" height="50" src="https://github.com/mochi-sann.png?size=100"/>|[@mochi-sann](https://github.com/mochi-sann)|[:link:](https://cb-speedapp.herokuapp.com/)|
-|5|**56.36**|<img alt="" width="50" height="50" src="https://github.com/go-to-the-future.png?size=100"/>|[@go-to-the-future](https://github.com/go-to-the-future)|[:link:](https://web-speed-hackathon-2021-kr.herokuapp.com/)|
-|6|**45.98**|<img alt="" width="50" height="50" src="https://github.com/imamiya-masaki.png?size=100"/>|[@imamiya-masaki](https://github.com/imamiya-masaki)|[:link:](https://web-speed-hackathon-2021-anpan.herokuapp.com/)|
+|2|**94.99**|<img alt="" width="50" height="50" src="https://github.com/imamiya-masaki.png?size=100"/>|[@imamiya-masaki](https://github.com/imamiya-masaki)|[:link:](https://web-speed-hackathon-2021-anpan.herokuapp.com/)|
+|3|**78.26**|<img alt="" width="50" height="50" src="https://github.com/CyberAgentHack.png?size=100"/>|[@CyberAgentHack](https://github.com/CyberAgentHack)|[:link:](https://web-speed-hackathon-2021.herokuapp.com/)|
+|4|**68.59**|<img alt="" width="50" height="50" src="https://github.com/ookam.png?size=100"/>|[@ookam](https://github.com/ookam)|[:link:](https://speed-2021.mx1.net/)|
+|5|**57.75**|<img alt="" width="50" height="50" src="https://github.com/mochi-sann.png?size=100"/>|[@mochi-sann](https://github.com/mochi-sann)|[:link:](https://cb-speedapp.herokuapp.com/)|
+|6|**56.36**|<img alt="" width="50" height="50" src="https://github.com/go-to-the-future.png?size=100"/>|[@go-to-the-future](https://github.com/go-to-the-future)|[:link:](https://web-speed-hackathon-2021-kr.herokuapp.com/)|
 
 <!-- leaderboard:end -->
 

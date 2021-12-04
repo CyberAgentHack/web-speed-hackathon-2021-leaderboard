@@ -107,7 +107,7 @@
           <span class="account">@<%= competitor.id %></span>
           <span class="matrix-heading">SCORE</span>
           <span>|</span>
-          <span><b><%= competitor.score %></b><span class="sup"> / 720.00</span></span>
+          <span><b><%= Number(competitor.score).toFixed(2) %></b><span class="sup"> / 720.00</span></span>
           <span class="matrix-heading">RANK</span>
           <span>|</span>
           <span><b><%= competitor.rank %> 位</b></span>

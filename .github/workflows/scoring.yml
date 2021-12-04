@@ -434,7 +434,7 @@ jobs:
           script: |
             const text = `
             "Web Speed Hackathon 2021 mini" に挑戦しました！
-            スコア ${process.env.SCORE} / 720.00 で、現在 ${process.env.RANK} 位です
+            スコア ${Number(process.env.SCORE).toFixed(2)} / 720.00 で、現在 ${process.env.RANK} 位です
             `.trim();
 
             const ogpUrl = new URL(`https://cyberagenthack.github.io/web-speed-hackathon-2021-leaderboard/scores/${process.env.USER_ID}/`);

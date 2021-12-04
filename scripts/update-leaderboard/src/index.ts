@@ -79,7 +79,7 @@ async function main() {
       .map((item) => {
         const inner = [
           `${item.rank}`,
-          `**${item.score}**`,
+          `**${Number(item.score).toFixed(2)}**`,
           `<img alt="" width="50" height="50" src="https://github.com/${item.competitorId}.png?size=100"/>`,
           `[@${item.competitorId}](https://github.com/${item.competitorId})`,
           `[:link:](${item.url})`,

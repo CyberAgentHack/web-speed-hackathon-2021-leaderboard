@@ -24,8 +24,9 @@
 |4|**78.26**|<img alt="" width="50" height="50" src="https://github.com/CyberAgentHack.png?size=100"/>|[@CyberAgentHack](https://github.com/CyberAgentHack)|[:link:](https://web-speed-hackathon-2021.herokuapp.com/)|
 |5|**68.59**|<img alt="" width="50" height="50" src="https://github.com/ookam.png?size=100"/>|[@ookam](https://github.com/ookam)|[:link:](https://speed-2021.mx1.net/)|
 |6|**64.69**|<img alt="" width="50" height="50" src="https://github.com/mochi-sann.png?size=100"/>|[@mochi-sann](https://github.com/mochi-sann)|[:link:](https://cb-speedapp.herokuapp.com/)|
-|7|**56.36**|<img alt="" width="50" height="50" src="https://github.com/go-to-the-future.png?size=100"/>|[@go-to-the-future](https://github.com/go-to-the-future)|[:link:](https://web-speed-hackathon-2021-kr.herokuapp.com/)|
-|8|**52.97**|<img alt="" width="50" height="50" src="https://github.com/seakid.png?size=100"/>|[@seakid](https://github.com/seakid)|[:link:](https://wsh-2021-seakid.herokuapp.com/)|
+|7|**62.20**|<img alt="" width="50" height="50" src="https://github.com/eichisanden.png?size=100"/>|[@eichisanden](https://github.com/eichisanden)|[:link:](https://powerful-chamber-16064.herokuapp.com/)|
+|8|**56.36**|<img alt="" width="50" height="50" src="https://github.com/go-to-the-future.png?size=100"/>|[@go-to-the-future](https://github.com/go-to-the-future)|[:link:](https://web-speed-hackathon-2021-kr.herokuapp.com/)|
+|9|**52.97**|<img alt="" width="50" height="50" src="https://github.com/seakid.png?size=100"/>|[@seakid](https://github.com/seakid)|[:link:](https://wsh-2021-seakid.herokuapp.com/)|
 
 <!-- leaderboard:end -->
 

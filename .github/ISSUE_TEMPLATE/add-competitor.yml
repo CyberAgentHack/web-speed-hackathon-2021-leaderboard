@@ -14,7 +14,7 @@ body:
 
         **参加する前に、注意事項とレギュレーションを確認してください**
 
-         - [注意事項](https://github.com/CyberAgentHack/web-speed-hackathon-2021/blob/main/docs/README.md#注意事項)
+         - [注意事項](https://github.com/CyberAgentHack/web-speed-hackathon-2021/blob/main/README.md#注意事項)
          - [レギュレーション](https://github.com/CyberAgentHack/web-speed-hackathon-2021/blob/main/docs/REGULATION.md)
   - type: dropdown
     id: regulation

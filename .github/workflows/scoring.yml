@@ -119,6 +119,7 @@ jobs:
           cache: 'yarn'
       - run: yarn install --frozen-lockfile
       - run: yarn build
+      - run: sudo apt-get install -y fonts-noto-cjk
       - name: Update leader board
         id: update
         run: |

@@ -22,7 +22,7 @@ async function measurePage(url: string): Promise<LighthouseScore> {
       'first-contentful-paint',
       'speed-index',
       'largest-contentful-paint',
-      'time-to-interactive',
+      'interactive',
       'total-blocking-time',
       'cumulative-layout-shift',
     ],
@@ -40,7 +40,7 @@ async function measurePage(url: string): Promise<LighthouseScore> {
       firstContentfulPaint: lhr.audits['first-contentful-paint']?.score ?? 0,
       speedIndex: lhr.audits['speed-index']?.score ?? 0,
       largestContentfulPaint: lhr.audits['largest-contentful-paint']?.score ?? 0,
-      timeToInteractive: lhr.audits['time-to-interactive']?.score ?? 0,
+      timeToInteractive: lhr.audits['interactive']?.score ?? 0,
       totalBlockingTime: lhr.audits['total-blocking-time']?.score ?? 0,
       cumulativeLayoutShift: lhr.audits['cumulative-layout-shift']?.score ?? 0,
     };

@@ -27,7 +27,7 @@
 |7|**154.61**|<img alt="" width="50" height="50" src="https://github.com/go-to-the-future.png?size=100"/>|[@go-to-the-future](https://github.com/go-to-the-future)|[:link:](https://web-speed-hackathon-2021-kr.herokuapp.com/)|
 |8|**108.09**|<img alt="" width="50" height="50" src="https://github.com/imamiya-masaki.png?size=100"/>|[@imamiya-masaki](https://github.com/imamiya-masaki)|[:link:](https://web-speed-hackathon-2021-anpan.herokuapp.com/)|
 |9|**84.00**|<img alt="" width="50" height="50" src="https://github.com/eichisanden.png?size=100"/>|[@eichisanden](https://github.com/eichisanden)|[:link:](https://powerful-chamber-16064.herokuapp.com/)|
-|10|**78.26**|<img alt="" width="50" height="50" src="https://github.com/CyberAgentHack.png?size=100"/>|[@CyberAgentHack](https://github.com/CyberAgentHack)|[:link:](https://web-speed-hackathon-2021.herokuapp.com/)|
+|10|**79.17**|<img alt="" width="50" height="50" src="https://github.com/shellingford330.png?size=100"/>|[@shellingford330](https://github.com/shellingford330)|[:link:](https://ca-writter.herokuapp.com/)|
 
 <!-- leaderboard:end -->
 

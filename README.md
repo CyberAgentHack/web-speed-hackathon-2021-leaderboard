@@ -21,7 +21,7 @@
 |1|**627.56**|<img alt="" width="50" height="50" src="https://github.com/3846masa.png?size=100"/>|[@3846masa](https://github.com/3846masa)|[:link:](https://sandbox-wsh-2021.an.r.appspot.com/)|
 |2|**551.74**|<img alt="" width="50" height="50" src="https://github.com/shgtkshruch.png?size=100"/>|[@shgtkshruch](https://github.com/shgtkshruch)|[:link:](https://ca-web-speed-hackathon-2021.herokuapp.com/)|
 |3|**190.04**|<img alt="" width="50" height="50" src="https://github.com/Leko.png?size=100"/>|[@Leko](https://github.com/Leko)|[:link:](https://leko-web-speed-hackathon-2021.herokuapp.com/)|
-|4|**155.27**|<img alt="" width="50" height="50" src="https://github.com/Co9xs.png?size=100"/>|[@Co9xs](https://github.com/Co9xs)|[:link:](https://web-speed-hackathon-2021-co9xs.herokuapp.com/)|
+|4|**184.87**|<img alt="" width="50" height="50" src="https://github.com/Co9xs.png?size=100"/>|[@Co9xs](https://github.com/Co9xs)|[:link:](https://web-speed-hackathon-2021-co9xs.herokuapp.com/)|
 |5|**154.61**|<img alt="" width="50" height="50" src="https://github.com/go-to-the-future.png?size=100"/>|[@go-to-the-future](https://github.com/go-to-the-future)|[:link:](https://web-speed-hackathon-2021-kr.herokuapp.com/)|
 |6|**147.59**|<img alt="" width="50" height="50" src="https://github.com/hiro0218.png?size=100"/>|[@hiro0218](https://github.com/hiro0218)|[:link:](https://web-speed-hackathon-2021-hiro.herokuapp.com/)|
 |7|**108.09**|<img alt="" width="50" height="50" src="https://github.com/imamiya-masaki.png?size=100"/>|[@imamiya-masaki](https://github.com/imamiya-masaki)|[:link:](https://web-speed-hackathon-2021-anpan.herokuapp.com/)|

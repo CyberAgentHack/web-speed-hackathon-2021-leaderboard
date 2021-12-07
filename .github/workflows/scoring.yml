@@ -145,6 +145,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./scripts/create-ogp/public
           keep_files: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
   comment-payload:
     runs-on: ubuntu-20.04
     needs:

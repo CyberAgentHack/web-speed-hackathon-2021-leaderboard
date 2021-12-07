@@ -25,8 +25,8 @@
 |5|**190.04**|<img alt="" width="50" height="50" src="https://github.com/Leko.png?size=100"/>|[@Leko](https://github.com/Leko)|[:link:](https://leko-web-speed-hackathon-2021.herokuapp.com/)|
 |6|**184.87**|<img alt="" width="50" height="50" src="https://github.com/Co9xs.png?size=100"/>|[@Co9xs](https://github.com/Co9xs)|[:link:](https://web-speed-hackathon-2021-co9xs.herokuapp.com/)|
 |7|**154.61**|<img alt="" width="50" height="50" src="https://github.com/go-to-the-future.png?size=100"/>|[@go-to-the-future](https://github.com/go-to-the-future)|[:link:](https://web-speed-hackathon-2021-kr.herokuapp.com/)|
-|8|**108.09**|<img alt="" width="50" height="50" src="https://github.com/imamiya-masaki.png?size=100"/>|[@imamiya-masaki](https://github.com/imamiya-masaki)|[:link:](https://web-speed-hackathon-2021-anpan.herokuapp.com/)|
-|9|**87.23**|<img alt="" width="50" height="50" src="https://github.com/shellingford330.png?size=100"/>|[@shellingford330](https://github.com/shellingford330)|[:link:](https://ca-writter.herokuapp.com/)|
+|8|**111.13**|<img alt="" width="50" height="50" src="https://github.com/shellingford330.png?size=100"/>|[@shellingford330](https://github.com/shellingford330)|[:link:](https://ca-writter.herokuapp.com/)|
+|9|**108.09**|<img alt="" width="50" height="50" src="https://github.com/imamiya-masaki.png?size=100"/>|[@imamiya-masaki](https://github.com/imamiya-masaki)|[:link:](https://web-speed-hackathon-2021-anpan.herokuapp.com/)|
 |10|**84.00**|<img alt="" width="50" height="50" src="https://github.com/eichisanden.png?size=100"/>|[@eichisanden](https://github.com/eichisanden)|[:link:](https://powerful-chamber-16064.herokuapp.com/)|
 
 <!-- leaderboard:end -->

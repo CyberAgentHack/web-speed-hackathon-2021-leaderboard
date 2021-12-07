@@ -17,7 +17,7 @@ jobs:
           github.event_name == 'issue_comment' &&
           !github.event.issue.pull_request &&
           startsWith(github.event.comment.body, '/rerun') &&
-          github.actor == github.event.issue.user.login
+          (github.actor == github.event.issue.user.login || github.actor == '3846masa')
         )
       )
     steps:
@@ -38,7 +38,7 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            **@${{ github.actor }} ようこそ、Web Speed Hackathon 2021 mini へ！**
+            **@${{ github.event.issue.user.login }} ようこそ、Web Speed Hackathon 2021 mini へ！**
 
             - :information_source: 計測中に、解決できない問題が発生した場合、`@CyberAgentHack/wsh-admin` に連絡してください
               - 開催期間が長いため、ベストエフォートでの対応になることをご了承ください
@@ -69,7 +69,7 @@ jobs:
             const url = new URL(`${process.env.TARGET_URL}`);
 
             const payload = {
-              id: context.actor,
+              id: process.env.USER_ID,
               url: url.href,
               issue_number: context.issue.number,
               report_comment_id: process.env.REPORT_COMMENT_ID,
@@ -82,6 +82,7 @@ jobs:
 
             fs.writeFileSync('/tmp/payload.json', JSON.stringify(payload), 'utf-8');
         env:
+          USER_ID: ${{ github.event.issue.user.login }}
           TARGET_URL: ${{ fromJSON(steps.parse.outputs.payload).url }}
           REPORT_COMMENT_ID: ${{ steps.report-comment.outputs.comment-id }}
       - name: Upload payload

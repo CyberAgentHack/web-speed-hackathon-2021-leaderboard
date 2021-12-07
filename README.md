@@ -27,7 +27,7 @@
 |7|**196.39**|<img alt="" width="50" height="50" src="https://github.com/azu.png?size=100"/>|[@azu](https://github.com/azu)|[:link:](https://web-speed-hackathon-2021-azu.herokuapp.com/)|
 |8|**154.61**|<img alt="" width="50" height="50" src="https://github.com/go-to-the-future.png?size=100"/>|[@go-to-the-future](https://github.com/go-to-the-future)|[:link:](https://web-speed-hackathon-2021-kr.herokuapp.com/)|
 |9|**94.75**|<img alt="" width="50" height="50" src="https://github.com/pvcresin.png?size=100"/>|[@pvcresin](https://github.com/pvcresin)|[:link:](https://pvcresin-wsh-2021.herokuapp.com/)|
-|10|**87.81**|<img alt="" width="50" height="50" src="https://github.com/imamiya-masaki.png?size=100"/>|[@imamiya-masaki](https://github.com/imamiya-masaki)|[:link:](https://web-speed-hackathon-2021-anpan.herokuapp.com/)|
+|10|**78.26**|<img alt="" width="50" height="50" src="https://github.com/CyberAgentHack.png?size=100"/>|[@CyberAgentHack](https://github.com/CyberAgentHack)|[:link:](https://web-speed-hackathon-2021.herokuapp.com/)|
 
 <!-- leaderboard:end -->
 

@@ -194,7 +194,7 @@ jobs:
 
             Actions: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-            :information_source: `/rerun` とコメントすると、もう一度計測ができます
+            :information_source: `/rerun` （リラン / 再実行）とコメントすると、もう一度計測ができます
             :information_source: 登録内容を変更する場合は、issue を閉じて作り直してください
   comment-vrt:
     runs-on: ubuntu-20.04
@@ -275,7 +275,7 @@ jobs:
 
             Actions: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-            :information_source: `/rerun` とコメントすると、もう一度計測ができます
+            :information_source: `/rerun` （リラン / 再実行）とコメントすると、もう一度計測ができます
             :information_source: 登録内容を変更する場合は、issue を閉じて作り直してください
   comment-scoring:
     runs-on: ubuntu-20.04
@@ -366,7 +366,7 @@ jobs:
 
             Actions: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-            :information_source: `/rerun` とコメントすると、もう一度計測ができます
+            :information_source: `/rerun` （リラン / 再実行）とコメントすると、もう一度計測ができます
             :information_source: 登録内容を変更する場合は、issue を閉じて作り直してください
   comment-failure-update:
     runs-on: ubuntu-20.04
@@ -418,7 +418,7 @@ jobs:
 
             Actions: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-            :information_source: `/rerun` とコメントすると、もう一度計測ができます
+            :information_source: `/rerun` （リラン / 再実行）とコメントすると、もう一度計測ができます
             :information_source: 登録内容を変更する場合は、issue を閉じて作り直してください
   comment-update:
     runs-on: ubuntu-20.04
@@ -499,5 +499,5 @@ jobs:
 
             Actions: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-            :information_source: `/rerun` とコメントすると、もう一度計測ができます
+            :information_source: `/rerun` （リラン / 再実行）とコメントすると、もう一度計測ができます
             :information_source: 登録内容を変更する場合は、issue を閉じて作り直してください

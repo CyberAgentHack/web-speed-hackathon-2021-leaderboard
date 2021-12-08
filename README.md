@@ -19,7 +19,7 @@
 |Rank|Score||CompetitorId|URL|
 |:--:|:--:|:--:|:--|:--:|
 |1|**655.13**|<img alt="" width="50" height="50" src="https://github.com/3846masa.png?size=100"/>|[@3846masa](https://github.com/3846masa)|[:link:](https://sandbox-wsh-2021.an.r.appspot.com/)|
-|2|**614.40**|<img alt="" width="50" height="50" src="https://github.com/shgtkshruch.png?size=100"/>|[@shgtkshruch](https://github.com/shgtkshruch)|[:link:](https://ca-web-speed-hackathon-2021.herokuapp.com/)|
+|2|**613.21**|<img alt="" width="50" height="50" src="https://github.com/shgtkshruch.png?size=100"/>|[@shgtkshruch](https://github.com/shgtkshruch)|[:link:](https://ca-web-speed-hackathon-2021.herokuapp.com/)|
 |3|**499.43**|<img alt="" width="50" height="50" src="https://github.com/shellingford330.png?size=100"/>|[@shellingford330](https://github.com/shellingford330)|[:link:](https://ca-writter.herokuapp.com/)|
 |4|**391.42**|<img alt="" width="50" height="50" src="https://github.com/Leko.png?size=100"/>|[@Leko](https://github.com/Leko)|[:link:](https://leko-web-speed-hackathon-2021.herokuapp.com/)|
 |5|**355.31**|<img alt="" width="50" height="50" src="https://github.com/azu.png?size=100"/>|[@azu](https://github.com/azu)|[:link:](https://web-speed-hackathon-2021-azu.herokuapp.com/)|

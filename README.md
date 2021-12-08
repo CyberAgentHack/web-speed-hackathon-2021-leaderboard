@@ -23,7 +23,7 @@
 |3|**423.82**|<img alt="" width="50" height="50" src="https://github.com/Leko.png?size=100"/>|[@Leko](https://github.com/Leko)|[:link:](https://leko-web-speed-hackathon-2021.herokuapp.com/)|
 |4|**331.08**|<img alt="" width="50" height="50" src="https://github.com/azu.png?size=100"/>|[@azu](https://github.com/azu)|[:link:](https://web-speed-hackathon-2021-azu.herokuapp.com/)|
 |5|**295.04**|<img alt="" width="50" height="50" src="https://github.com/shellingford330.png?size=100"/>|[@shellingford330](https://github.com/shellingford330)|[:link:](https://ca-writter.herokuapp.com/)|
-|6|**250.76**|<img alt="" width="50" height="50" src="https://github.com/Co9xs.png?size=100"/>|[@Co9xs](https://github.com/Co9xs)|[:link:](https://web-speed-hackathon-2021-co9xs.herokuapp.com/)|
+|6|**266.24**|<img alt="" width="50" height="50" src="https://github.com/Co9xs.png?size=100"/>|[@Co9xs](https://github.com/Co9xs)|[:link:](https://web-speed-hackathon-2021-co9xs.herokuapp.com/)|
 |7|**232.81**|<img alt="" width="50" height="50" src="https://github.com/hiro0218.png?size=100"/>|[@hiro0218](https://github.com/hiro0218)|[:link:](https://web-speed-hackathon-2021-hiro.herokuapp.com/)|
 |8|**144.95**|<img alt="" width="50" height="50" src="https://github.com/go-to-the-future.png?size=100"/>|[@go-to-the-future](https://github.com/go-to-the-future)|[:link:](https://web-speed-hackathon-2021-kr.herokuapp.com/)|
 |9|**94.66**|<img alt="" width="50" height="50" src="https://github.com/pvcresin.png?size=100"/>|[@pvcresin](https://github.com/pvcresin)|[:link:](https://pvcresin-wsh-2021.herokuapp.com/)|

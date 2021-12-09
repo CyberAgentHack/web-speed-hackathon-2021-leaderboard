@@ -27,7 +27,7 @@
 |7|**296.14**|<img alt="" width="50" height="50" src="https://github.com/airtoxin.png?size=100"/>|[@airtoxin](https://github.com/airtoxin)|[:link:](https://web-speed-hackathon-2021-atx.herokuapp.com/)|
 |8|**266.34**|<img alt="" width="50" height="50" src="https://github.com/hiro0218.png?size=100"/>|[@hiro0218](https://github.com/hiro0218)|[:link:](https://web-speed-hackathon-2021-hiro.herokuapp.com/)|
 |9|**225.42**|<img alt="" width="50" height="50" src="https://github.com/tk1024.png?size=100"/>|[@tk1024](https://github.com/tk1024)|[:link:](https://wsh-2021-tk1024.herokuapp.com/)|
-|10|**165.26**|<img alt="" width="50" height="50" src="https://github.com/sapphi-red.png?size=100"/>|[@sapphi-red](https://github.com/sapphi-red)|[:link:](https://web-speed-hackathon-2021-mini.herokuapp.com/)|
+|10|**183.67**|<img alt="" width="50" height="50" src="https://github.com/sapphi-red.png?size=100"/>|[@sapphi-red](https://github.com/sapphi-red)|[:link:](https://web-speed-hackathon-2021-mini.herokuapp.com/)|
 
 <!-- leaderboard:end -->
 

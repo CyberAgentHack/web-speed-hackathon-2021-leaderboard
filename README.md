@@ -8,6 +8,10 @@
 - デモサイト: https://web-speed-hackathon-2021.herokuapp.com/
 - 参加方法: https://github.com/CyberAgentHack/web-speed-hackathon-2021
 
+## 運営からのお知らせ
+
+[./docs/ANNOUNCEMENT.md](./docs/ANNOUNCEMENT.md) をご覧ください
+
 ## リーダーボード
 
 **上位 10 位までを表示しています**

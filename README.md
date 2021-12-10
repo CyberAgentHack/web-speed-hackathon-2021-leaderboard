@@ -24,8 +24,8 @@
 |:--:|:--:|:--:|:--|:--:|
 |1|**655.13**|<img alt="" width="50" height="50" src="https://github.com/3846masa.png?size=100"/>|[@3846masa](https://github.com/3846masa)|[:link:](https://sandbox-wsh-2021.an.r.appspot.com/)|
 |2|**632.35**|<img alt="" width="50" height="50" src="https://github.com/sapphi-red.png?size=100"/>|[@sapphi-red](https://github.com/sapphi-red)|[:link:](https://web-speed-hackathon-online-2021-mini.sapphi.red/)|
-|3|**614.20**|<img alt="" width="50" height="50" src="https://github.com/shellingford330.png?size=100"/>|[@shellingford330](https://github.com/shellingford330)|[:link:](https://ca-writter.herokuapp.com/)|
-|4|**613.21**|<img alt="" width="50" height="50" src="https://github.com/shgtkshruch.png?size=100"/>|[@shgtkshruch](https://github.com/shgtkshruch)|[:link:](https://ca-web-speed-hackathon-2021.herokuapp.com/)|
+|3|**613.21**|<img alt="" width="50" height="50" src="https://github.com/shgtkshruch.png?size=100"/>|[@shgtkshruch](https://github.com/shgtkshruch)|[:link:](https://ca-web-speed-hackathon-2021.herokuapp.com/)|
+|4|**612.19**|<img alt="" width="50" height="50" src="https://github.com/shellingford330.png?size=100"/>|[@shellingford330](https://github.com/shellingford330)|[:link:](https://ca-writter.herokuapp.com/)|
 |5|**530.36**|<img alt="" width="50" height="50" src="https://github.com/Co9xs.png?size=100"/>|[@Co9xs](https://github.com/Co9xs)|[:link:](https://web-speed-hackathon-2021-co9xs.herokuapp.com/)|
 |6|**409.22**|<img alt="" width="50" height="50" src="https://github.com/tk1024.png?size=100"/>|[@tk1024](https://github.com/tk1024)|[:link:](https://wsh-2021-tk1024.herokuapp.com/)|
 |7|**403.22**|<img alt="" width="50" height="50" src="https://github.com/airtoxin.png?size=100"/>|[@airtoxin](https://github.com/airtoxin)|[:link:](https://web-speed-hackathon-2021-atx.herokuapp.com/)|

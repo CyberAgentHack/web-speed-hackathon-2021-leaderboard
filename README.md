@@ -30,8 +30,8 @@
 |6|**381.41**|<img alt="" width="50" height="50" src="https://github.com/Co9xs.png?size=100"/>|[@Co9xs](https://github.com/Co9xs)|[:link:](https://web-speed-hackathon-2021-co9xs.herokuapp.com/)|
 |7|**360.20**|<img alt="" width="50" height="50" src="https://github.com/airtoxin.png?size=100"/>|[@airtoxin](https://github.com/airtoxin)|[:link:](https://web-speed-hackathon-2021-atx.herokuapp.com/)|
 |8|**355.31**|<img alt="" width="50" height="50" src="https://github.com/azu.png?size=100"/>|[@azu](https://github.com/azu)|[:link:](https://web-speed-hackathon-2021-azu.herokuapp.com/)|
-|9|**246.02**|<img alt="" width="50" height="50" src="https://github.com/hiro0218.png?size=100"/>|[@hiro0218](https://github.com/hiro0218)|[:link:](https://web-speed-hackathon-2021-hiro.herokuapp.com/)|
-|10|**223.17**|<img alt="" width="50" height="50" src="https://github.com/tk1024.png?size=100"/>|[@tk1024](https://github.com/tk1024)|[:link:](https://wsh-2021-tk1024.herokuapp.com/)|
+|9|**223.17**|<img alt="" width="50" height="50" src="https://github.com/tk1024.png?size=100"/>|[@tk1024](https://github.com/tk1024)|[:link:](https://wsh-2021-tk1024.herokuapp.com/)|
+|10|**200.94**|<img alt="" width="50" height="50" src="https://github.com/hiro0218.png?size=100"/>|[@hiro0218](https://github.com/hiro0218)|[:link:](https://web-speed-hackathon-2021-hiro.herokuapp.com/)|
 
 <!-- leaderboard:end -->
 

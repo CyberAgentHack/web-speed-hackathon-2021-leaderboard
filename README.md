@@ -31,7 +31,7 @@
 |7|**496.69**|<img alt="" width="50" height="50" src="https://github.com/tk1024.png?size=100"/>|[@tk1024](https://github.com/tk1024)|[:link:](https://wsh-2021-tk1024.herokuapp.com/)|
 |8|**403.22**|<img alt="" width="50" height="50" src="https://github.com/airtoxin.png?size=100"/>|[@airtoxin](https://github.com/airtoxin)|[:link:](https://web-speed-hackathon-2021-atx.herokuapp.com/)|
 |9|**396.05**|<img alt="" width="50" height="50" src="https://github.com/Leko.png?size=100"/>|[@Leko](https://github.com/Leko)|[:link:](https://leko-web-speed-hackathon-2021.herokuapp.com/)|
-|10|**374.62**|<img alt="" width="50" height="50" src="https://github.com/mkizka.png?size=100"/>|[@mkizka](https://github.com/mkizka)|[:link:](https://floating-dusk-76675.herokuapp.com/)|
+|10|**358.85**|<img alt="" width="50" height="50" src="https://github.com/mkizka.png?size=100"/>|[@mkizka](https://github.com/mkizka)|[:link:](https://floating-dusk-76675.herokuapp.com/)|
 
 <!-- leaderboard:end -->
 

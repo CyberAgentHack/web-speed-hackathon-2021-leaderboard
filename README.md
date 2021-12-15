@@ -30,7 +30,7 @@
 |6|**613.21**|<img alt="" width="50" height="50" src="https://github.com/shgtkshruch.png?size=100"/>|[@shgtkshruch](https://github.com/shgtkshruch)|[:link:](https://ca-web-speed-hackathon-2021.herokuapp.com/)|
 |7|**542.35**|<img alt="" width="50" height="50" src="https://github.com/tk1024.png?size=100"/>|[@tk1024](https://github.com/tk1024)|[:link:](https://web-speed-2021.ue.r.appspot.com/)|
 |8|**506.50**|<img alt="" width="50" height="50" src="https://github.com/mkizka.png?size=100"/>|[@mkizka](https://github.com/mkizka)|[:link:](https://floating-dusk-76675.herokuapp.com/)|
-|9|**500.28**|<img alt="" width="50" height="50" src="https://github.com/reyu0722.png?size=100"/>|[@reyu0722](https://github.com/reyu0722)|[:link:](https://reyu-webspeedhackathon2021.herokuapp.com/)|
+|9|**459.35**|<img alt="" width="50" height="50" src="https://github.com/reyu0722.png?size=100"/>|[@reyu0722](https://github.com/reyu0722)|[:link:](https://reyu-webspeedhackathon2021.herokuapp.com/)|
 |10|**403.22**|<img alt="" width="50" height="50" src="https://github.com/airtoxin.png?size=100"/>|[@airtoxin](https://github.com/airtoxin)|[:link:](https://web-speed-hackathon-2021-atx.herokuapp.com/)|
 
 <!-- leaderboard:end -->

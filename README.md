@@ -29,8 +29,8 @@
 |5|**632.35**|<img alt="" width="50" height="50" src="https://github.com/sapphi-red.png?size=100"/>|[@sapphi-red](https://github.com/sapphi-red)|[:link:](https://web-speed-hackathon-online-2021-mini.sapphi.red/)|
 |6|**627.66**|<img alt="" width="50" height="50" src="https://github.com/Co9xs.png?size=100"/>|[@Co9xs](https://github.com/Co9xs)|[:link:](https://web-speed-hackathon-2021-co9xs.herokuapp.com/)|
 |7|**616.70**|<img alt="" width="50" height="50" src="https://github.com/shellingford330.png?size=100"/>|[@shellingford330](https://github.com/shellingford330)|[:link:](https://ca-writter.herokuapp.com/)|
-|8|**614.47**|<img alt="" width="50" height="50" src="https://github.com/NaotoshiFujita.png?size=100"/>|[@NaotoshiFujita](https://github.com/NaotoshiFujita)|[:link:](https://web-speed-hackathon-335112.an.r.appspot.com/)|
-|9|**613.21**|<img alt="" width="50" height="50" src="https://github.com/shgtkshruch.png?size=100"/>|[@shgtkshruch](https://github.com/shgtkshruch)|[:link:](https://ca-web-speed-hackathon-2021.herokuapp.com/)|
+|8|**613.21**|<img alt="" width="50" height="50" src="https://github.com/shgtkshruch.png?size=100"/>|[@shgtkshruch](https://github.com/shgtkshruch)|[:link:](https://ca-web-speed-hackathon-2021.herokuapp.com/)|
+|9|**595.43**|<img alt="" width="50" height="50" src="https://github.com/NaotoshiFujita.png?size=100"/>|[@NaotoshiFujita](https://github.com/NaotoshiFujita)|[:link:](https://web-speed-hackathon-335112.an.r.appspot.com/)|
 |10|**542.42**|<img alt="" width="50" height="50" src="https://github.com/math314.png?size=100"/>|[@math314](https://github.com/math314)|[:link:](https://powerful-lake-98455.herokuapp.com/)|
 
 <!-- leaderboard:end -->

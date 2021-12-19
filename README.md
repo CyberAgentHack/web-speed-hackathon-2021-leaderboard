@@ -22,7 +22,7 @@
 
 |Rank|Score||CompetitorId|URL|
 |:--:|:--:|:--:|:--|:--:|
-|1|**662.34**|<img alt="" width="50" height="50" src="https://github.com/tk1024.png?size=100"/>|[@tk1024](https://github.com/tk1024)|[:link:](https://web-speed-2021.ue.r.appspot.com/)|
+|1|**677.79**|<img alt="" width="50" height="50" src="https://github.com/tk1024.png?size=100"/>|[@tk1024](https://github.com/tk1024)|[:link:](https://web-speed-2021.ue.r.appspot.com/)|
 |2|**655.13**|<img alt="" width="50" height="50" src="https://github.com/3846masa.png?size=100"/>|[@3846masa](https://github.com/3846masa)|[:link:](https://sandbox-wsh-2021.an.r.appspot.com/)|
 |3|**638.30**|<img alt="" width="50" height="50" src="https://github.com/Karibash.png?size=100"/>|[@Karibash](https://github.com/Karibash)|[:link:](https://ca-web-speed-hackathon-2021.karibash.com/)|
 |4|**637.13**|<img alt="" width="50" height="50" src="https://github.com/NaotoshiFujita.png?size=100"/>|[@NaotoshiFujita](https://github.com/NaotoshiFujita)|[:link:](https://web-speed-hackathon-335112.an.r.appspot.com/)|

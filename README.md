@@ -30,7 +30,7 @@
 |6|**627.66**|<img alt="" width="50" height="50" src="https://github.com/Co9xs.png?size=100"/>|[@Co9xs](https://github.com/Co9xs)|[:link:](https://web-speed-hackathon-2021-co9xs.herokuapp.com/)|
 |7|**616.70**|<img alt="" width="50" height="50" src="https://github.com/shellingford330.png?size=100"/>|[@shellingford330](https://github.com/shellingford330)|[:link:](https://ca-writter.herokuapp.com/)|
 |8|**613.21**|<img alt="" width="50" height="50" src="https://github.com/shgtkshruch.png?size=100"/>|[@shgtkshruch](https://github.com/shgtkshruch)|[:link:](https://ca-web-speed-hackathon-2021.herokuapp.com/)|
-|9|**608.34**|<img alt="" width="50" height="50" src="https://github.com/reyu0722.png?size=100"/>|[@reyu0722](https://github.com/reyu0722)|[:link:](http://ec2-3-113-22-168.ap-northeast-1.compute.amazonaws.com/)|
+|9|**601.39**|<img alt="" width="50" height="50" src="https://github.com/reyu0722.png?size=100"/>|[@reyu0722](https://github.com/reyu0722)|[:link:](http://ec2-3-113-22-168.ap-northeast-1.compute.amazonaws.com/)|
 |10|**588.81**|<img alt="" width="50" height="50" src="https://github.com/pvcresin.png?size=100"/>|[@pvcresin](https://github.com/pvcresin)|[:link:](https://pvcresin-wsh-2021.herokuapp.com/)|
 
 <!-- leaderboard:end -->

@@ -22,8 +22,8 @@
 
 |Rank|Score||CompetitorId|URL|
 |:--:|:--:|:--:|:--|:--:|
-|1|**707.97**|<img alt="" width="50" height="50" src="https://github.com/NaotoshiFujita.png?size=100"/>|[@NaotoshiFujita](https://github.com/NaotoshiFujita)|[:link:](https://web-speed-hackathon-335112.an.r.appspot.com/)|
-|2|**702.19**|<img alt="" width="50" height="50" src="https://github.com/sapphi-red.png?size=100"/>|[@sapphi-red](https://github.com/sapphi-red)|[:link:](https://web-speed-hackathon-online-2021-mini.sapphi.red/)|
+|1|**702.19**|<img alt="" width="50" height="50" src="https://github.com/sapphi-red.png?size=100"/>|[@sapphi-red](https://github.com/sapphi-red)|[:link:](https://web-speed-hackathon-online-2021-mini.sapphi.red/)|
+|2|**698.30**|<img alt="" width="50" height="50" src="https://github.com/NaotoshiFujita.png?size=100"/>|[@NaotoshiFujita](https://github.com/NaotoshiFujita)|[:link:](https://web-speed-hackathon-335112.an.r.appspot.com/)|
 |3|**677.79**|<img alt="" width="50" height="50" src="https://github.com/tk1024.png?size=100"/>|[@tk1024](https://github.com/tk1024)|[:link:](https://web-speed-2021.ue.r.appspot.com/)|
 |4|**655.13**|<img alt="" width="50" height="50" src="https://github.com/3846masa.png?size=100"/>|[@3846masa](https://github.com/3846masa)|[:link:](https://sandbox-wsh-2021.an.r.appspot.com/)|
 |5|**627.66**|<img alt="" width="50" height="50" src="https://github.com/Co9xs.png?size=100"/>|[@Co9xs](https://github.com/Co9xs)|[:link:](https://web-speed-hackathon-2021-co9xs.herokuapp.com/)|

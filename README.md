@@ -28,9 +28,9 @@
 |4|**655.13**|<img alt="" width="50" height="50" src="https://github.com/3846masa.png?size=100"/>|[@3846masa](https://github.com/3846masa)|[:link:](https://sandbox-wsh-2021.an.r.appspot.com/)|
 |5|**627.66**|<img alt="" width="50" height="50" src="https://github.com/Co9xs.png?size=100"/>|[@Co9xs](https://github.com/Co9xs)|[:link:](https://web-speed-hackathon-2021-co9xs.herokuapp.com/)|
 |6|**616.70**|<img alt="" width="50" height="50" src="https://github.com/shellingford330.png?size=100"/>|[@shellingford330](https://github.com/shellingford330)|[:link:](https://ca-writter.herokuapp.com/)|
-|7|**614.31**|<img alt="" width="50" height="50" src="https://github.com/reyu0722.png?size=100"/>|[@reyu0722](https://github.com/reyu0722)|[:link:](http://ec2-3-113-22-168.ap-northeast-1.compute.amazonaws.com/)|
-|8|**613.21**|<img alt="" width="50" height="50" src="https://github.com/shgtkshruch.png?size=100"/>|[@shgtkshruch](https://github.com/shgtkshruch)|[:link:](https://ca-web-speed-hackathon-2021.herokuapp.com/)|
-|9|**608.51**|<img alt="" width="50" height="50" src="https://github.com/Karibash.png?size=100"/>|[@Karibash](https://github.com/Karibash)|[:link:](https://ca-web-speed-hackathon-2021.karibash.com/)|
+|7|**613.21**|<img alt="" width="50" height="50" src="https://github.com/shgtkshruch.png?size=100"/>|[@shgtkshruch](https://github.com/shgtkshruch)|[:link:](https://ca-web-speed-hackathon-2021.herokuapp.com/)|
+|8|**608.51**|<img alt="" width="50" height="50" src="https://github.com/Karibash.png?size=100"/>|[@Karibash](https://github.com/Karibash)|[:link:](https://ca-web-speed-hackathon-2021.karibash.com/)|
+|9|**608.34**|<img alt="" width="50" height="50" src="https://github.com/reyu0722.png?size=100"/>|[@reyu0722](https://github.com/reyu0722)|[:link:](http://ec2-3-113-22-168.ap-northeast-1.compute.amazonaws.com/)|
 |10|**566.31**|<img alt="" width="50" height="50" src="https://github.com/pvcresin.png?size=100"/>|[@pvcresin](https://github.com/pvcresin)|[:link:](https://pvcresin-wsh-2021.herokuapp.com/)|
 
 <!-- leaderboard:end -->

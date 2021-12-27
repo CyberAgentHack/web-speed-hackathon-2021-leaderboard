@@ -91,6 +91,7 @@ jobs:
           cache: 'yarn'
       - run: yarn install --frozen-lockfile
       - run: yarn build
+      - run: sudo apt-get install -y fonts-noto-cjk
       - name: Scoring
         id: scoring
         run: |

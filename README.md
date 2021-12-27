@@ -22,7 +22,7 @@
 
 |Rank|Score||CompetitorId|URL|
 |:--:|:--:|:--:|:--|:--:|
-|1|**704.27**|<img alt="" width="50" height="50" src="https://github.com/NaotoshiFujita.png?size=100"/>|[@NaotoshiFujita](https://github.com/NaotoshiFujita)|[:link:](https://web-speed-hackathon-335112.an.r.appspot.com/)|
+|1|**713.93**|<img alt="" width="50" height="50" src="https://github.com/NaotoshiFujita.png?size=100"/>|[@NaotoshiFujita](https://github.com/NaotoshiFujita)|[:link:](https://web-speed-hackathon-335112.an.r.appspot.com/)|
 |2|**668.62**|<img alt="" width="50" height="50" src="https://github.com/tk1024.png?size=100"/>|[@tk1024](https://github.com/tk1024)|[:link:](https://web-speed-2021.ue.r.appspot.com/)|
 |3|**658.80**|<img alt="" width="50" height="50" src="https://github.com/sapphi-red.png?size=100"/>|[@sapphi-red](https://github.com/sapphi-red)|[:link:](https://webspeed-hackathon-online-2021-mini.azurewebsites.net/)|
 |4|**655.13**|<img alt="" width="50" height="50" src="https://github.com/3846masa.png?size=100"/>|[@3846masa](https://github.com/3846masa)|[:link:](https://sandbox-wsh-2021.an.r.appspot.com/)|

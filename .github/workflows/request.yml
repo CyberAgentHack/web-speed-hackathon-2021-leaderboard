@@ -40,7 +40,7 @@ jobs:
           body: |
             **@${{ github.event.issue.user.login }} ようこそ、Web Speed Hackathon 2021 mini へ！**
 
-            - :information_source: 計測中に、解決できない問題が発生した場合、`@CyberAgentHack/wsh-admin` に連絡してください
+            - :information_source: 計測中に、解決できない問題が発生した場合、`@3846masa` に連絡してください
               - 開催期間が長いため、ベストエフォートでの対応になることをご了承ください
             - :racing_car: これから自動でスコアが計測されて、リーダーボードに反映されます
               - よい結果が出たら、ぜひ採点結果を **#WebSpeedHackathon** で Twitter に投稿してください

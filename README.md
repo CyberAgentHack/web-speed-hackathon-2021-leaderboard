@@ -28,7 +28,7 @@
 |4|**655.13**|<img alt="" width="50" height="50" src="https://github.com/3846masa.png?size=100"/>|[@3846masa](https://github.com/3846masa)|[:link:](https://sandbox-wsh-2021.an.r.appspot.com/)|
 |5|**649.46**|<img alt="" width="50" height="50" src="https://github.com/hira777.png?size=100"/>|[@hira777](https://github.com/hira777)|[:link:](https://web-speed-2021-soarflat.herokuapp.com/)|
 |6|**641.97**|<img alt="" width="50" height="50" src="https://github.com/shellingford330.png?size=100"/>|[@shellingford330](https://github.com/shellingford330)|[:link:](https://ca-writter.herokuapp.com/)|
-|7|**636.97**|<img alt="" width="50" height="50" src="https://github.com/tk1024.png?size=100"/>|[@tk1024](https://github.com/tk1024)|[:link:](https://web-speed-2021.ue.r.appspot.com/)|
+|7|**634.74**|<img alt="" width="50" height="50" src="https://github.com/tk1024.png?size=100"/>|[@tk1024](https://github.com/tk1024)|[:link:](https://web-speed-2021.ue.r.appspot.com/)|
 |8|**633.83**|<img alt="" width="50" height="50" src="https://github.com/reyu0722.png?size=100"/>|[@reyu0722](https://github.com/reyu0722)|[:link:](http://ec2-3-113-22-168.ap-northeast-1.compute.amazonaws.com/)|
 |9|**623.83**|<img alt="" width="50" height="50" src="https://github.com/pvcresin.png?size=100"/>|[@pvcresin](https://github.com/pvcresin)|[:link:](https://pvcresin-wsh-2021.herokuapp.com/)|
 |10|**613.21**|<img alt="" width="50" height="50" src="https://github.com/shgtkshruch.png?size=100"/>|[@shgtkshruch](https://github.com/shgtkshruch)|[:link:](https://ca-web-speed-hackathon-2021.herokuapp.com/)|

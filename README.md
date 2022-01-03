@@ -31,7 +31,7 @@
 |7|**663.41**|<img alt="" width="50" height="50" src="https://github.com/tk1024.png?size=100"/>|[@tk1024](https://github.com/tk1024)|[:link:](https://web-speed-2021.ue.r.appspot.com/)|
 |8|**649.46**|<img alt="" width="50" height="50" src="https://github.com/hira777.png?size=100"/>|[@hira777](https://github.com/hira777)|[:link:](https://web-speed-2021-soarflat.herokuapp.com/)|
 |9|**649.21**|<img alt="" width="50" height="50" src="https://github.com/toshi-pono.png?size=100"/>|[@toshi-pono](https://github.com/toshi-pono)|[:link:](https://web-speed-hackathon-online-2021.toshi00.dev/)|
-|10|**641.97**|<img alt="" width="50" height="50" src="https://github.com/shellingford330.png?size=100"/>|[@shellingford330](https://github.com/shellingford330)|[:link:](https://ca-writter.herokuapp.com/)|
+|10|**648.31**|<img alt="" width="50" height="50" src="https://github.com/reyu0722.png?size=100"/>|[@reyu0722](https://github.com/reyu0722)|[:link:](https://web-speed-hackathon2021.reyu.dev/)|
 
 <!-- leaderboard:end -->
 

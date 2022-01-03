@@ -30,8 +30,8 @@
 |6|**655.13**|<img alt="" width="50" height="50" src="https://github.com/3846masa.png?size=100"/>|[@3846masa](https://github.com/3846masa)|[:link:](https://sandbox-wsh-2021.an.r.appspot.com/)|
 |7|**649.46**|<img alt="" width="50" height="50" src="https://github.com/hira777.png?size=100"/>|[@hira777](https://github.com/hira777)|[:link:](https://web-speed-2021-soarflat.herokuapp.com/)|
 |8|**649.21**|<img alt="" width="50" height="50" src="https://github.com/toshi-pono.png?size=100"/>|[@toshi-pono](https://github.com/toshi-pono)|[:link:](https://web-speed-hackathon-online-2021.toshi00.dev/)|
-|9|**646.70**|<img alt="" width="50" height="50" src="https://github.com/Karibash.png?size=100"/>|[@Karibash](https://github.com/Karibash)|[:link:](https://ca-web-speed-hackathon-2021.karibash.com/)|
-|10|**641.97**|<img alt="" width="50" height="50" src="https://github.com/shellingford330.png?size=100"/>|[@shellingford330](https://github.com/shellingford330)|[:link:](https://ca-writter.herokuapp.com/)|
+|9|**641.97**|<img alt="" width="50" height="50" src="https://github.com/shellingford330.png?size=100"/>|[@shellingford330](https://github.com/shellingford330)|[:link:](https://ca-writter.herokuapp.com/)|
+|10|**623.83**|<img alt="" width="50" height="50" src="https://github.com/pvcresin.png?size=100"/>|[@pvcresin](https://github.com/pvcresin)|[:link:](https://pvcresin-wsh-2021.herokuapp.com/)|
 
 <!-- leaderboard:end -->
 

@@ -40,8 +40,7 @@ jobs:
           body: |
             **@${{ github.event.issue.user.login }} ようこそ、Web Speed Hackathon 2021 mini へ！**
 
-            - :information_source: 計測中に、解決できない問題が発生した場合、`@3846masa` に連絡してください
-              - 開催期間が長いため、ベストエフォートでの対応になることをご了承ください
+            - :warning: 競技期間を過ぎたため、リーダーボードには反映されません
             - :racing_car: これから自動でスコアが計測されて、リーダーボードに反映されます
               - よい結果が出たら、ぜひ採点結果を **#WebSpeedHackathon** で Twitter に投稿してください
             - :memo: 開催期間中の参加記事や解説記事、大歓迎です！

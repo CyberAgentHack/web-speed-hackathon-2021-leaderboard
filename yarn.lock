@@ -595,6 +595,11 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
+"@prisma/engines@3.11.1-1.1a2506facaf1a4727b7c26850735e88ec779dee9":
+  version "3.11.1-1.1a2506facaf1a4727b7c26850735e88ec779dee9"
+  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-3.11.1-1.1a2506facaf1a4727b7c26850735e88ec779dee9.tgz#09ac23f8f615a8586d8d44538060ada199fe872c"
+  integrity sha512-MILbsGnvmnhCbFGa2/iSnsyGyazU3afzD7ldjCIeLIGKkNBMSZgA2IvpYsAXl+6qFHKGrS3B2otKfV31dwMSQw==
+
 "@remix-run/cloudflare-workers@^1.3.4":
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/@remix-run/cloudflare-workers/-/cloudflare-workers-1.3.4.tgz#3028e54eb055fe6c9112a3b91c229d209f8a7da4"
@@ -5547,6 +5552,13 @@ pretty-ms@^7.0.1:
   integrity sha512-973driJZvxiGOQ5ONsFhOF/DtzPMOMtgC11kCpUrPGMTgqp2q/1gwzCquocrN33is0VZ5GFHXZYMM9l6h67v2Q==
   dependencies:
     parse-ms "^2.1.0"
+
+prisma@^3.11.1:
+  version "3.11.1"
+  resolved "https://registry.yarnpkg.com/prisma/-/prisma-3.11.1.tgz#fff9c0bcf83cb30c2e1d650882d5eb3c5565e028"
+  integrity sha512-aYn8bQwt1xwR2oSsVNHT4PXU7EhsThIwmpNB/MNUaaMx5OPLTro6VdNJe/sJssXFLxhamfWeMjwmpXjljo6xkg==
+  dependencies:
+    "@prisma/engines" "3.11.1-1.1a2506facaf1a4727b7c26850735e88ec779dee9"
 
 process-nextick-args@~2.0.0:
   version "2.0.1"

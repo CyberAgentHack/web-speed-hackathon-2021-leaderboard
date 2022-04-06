@@ -11,5 +11,8 @@
   },
   "workspaces": [
     "scripts/*"
-  ]
+  ],
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  }
 }

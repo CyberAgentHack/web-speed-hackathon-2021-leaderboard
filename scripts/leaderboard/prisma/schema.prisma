@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Team {
+  id        Int      @id @default(autoincrement())
+  name      String?
+  pageUrl   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  Users        User[]
+  Measurements Measurement[]
+  Queues       Queue[]
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  teamId    Int
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  Team Team @relation(fields: [teamId], references: [id])
+}
+
+model Measurement {
+  id        Int      @id @default(autoincrement())
+  teamId    Int
+  score     Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  Team Team @relation(fields: [teamId], references: [id])
+}
+
+enum QueueStatus {
+  WAITING
+  RUNNING
+  FAILED
+  DONE
+}
+
+model Queue {
+  id     Int         @id @default(autoincrement())
+  teamId Int
+  status QueueStatus
+  data   Json?
+
+  Team Team @relation(fields: [teamId], references: [id])
+}

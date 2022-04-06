@@ -1,3 +1,5 @@
+import { useActionData } from "@remix-run/react";
+import { Form } from "@remix-run/react";
 import {
   Stack,
   FormControl,
@@ -10,6 +12,9 @@ import {
 } from "@chakra-ui/react";
 
 export const MeasurementRequestForm = () => {
+  // TODO: display error
+  const errors = useActionData()
+
   return (
     <Flex
       minH="100vh"
@@ -32,34 +37,32 @@ export const MeasurementRequestForm = () => {
         >
           Request Measurement
         </Heading>
-        <Stack
-          direction={{ base: "column", md: "row" }}
-          as="form"
-          spacing="12px"
-          onSubmit={(e) => {
-            console.log(e);
-          }}
-        >
-          <FormControl>
-            <Input
-              variant="solid"
-              borderWidth={1}
-              color="gray.800"
-              _placeholder={{
-                color: "gray.400",
-              }}
-              borderColor={useColorModeValue("gray.300", "gray.700")}
-              type="url"
-              required
-              placeholder="Your Page URL"
-            />
-          </FormControl>
-          <FormControl w={{ base: "100%", md: "40%" }}>
-            <Button colorScheme="blue" w="100%" type="submit">
-              Request
-            </Button>
-          </FormControl>
-        </Stack>
+        <Form method='post'>
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            spacing="12px"
+          >
+            <FormControl>
+              <Input
+                variant="solid"
+                borderWidth={1}
+                color="gray.800"
+                _placeholder={{
+                  color: "gray.400",
+                }}
+                borderColor={useColorModeValue("gray.300", "gray.700")}
+                type="url"
+                required
+                placeholder="Your Page URL"
+              />
+            </FormControl>
+            <FormControl w={{ base: "100%", md: "40%" }}>
+              <Button colorScheme="blue" w="100%" type="submit">
+                Request
+              </Button>
+            </FormControl>
+          </Stack>
+        </Form>
       </Container>
     </Flex>
   );

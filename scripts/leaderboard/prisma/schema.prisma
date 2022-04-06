@@ -17,8 +17,9 @@ model Team {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 
-  users        User[]
-  measurements Measurement[]
+  Users        User[]
+  Measurements Measurement[]
+  Queues       Queue[]
 }
 
 model User {
@@ -39,5 +40,21 @@ model Measurement {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 
-  Team      Team     @relation(fields: [teamId], references: [id])
+  Team Team @relation(fields: [teamId], references: [id])
+}
+
+enum QueueStatus {
+  WAITING
+  RUNNING
+  FAILED
+  DONE
+}
+
+model Queue {
+  id     Int         @id @default(autoincrement())
+  teamId Int
+  status QueueStatus
+  data   Json?
+
+  Team Team @relation(fields: [teamId], references: [id])
 }

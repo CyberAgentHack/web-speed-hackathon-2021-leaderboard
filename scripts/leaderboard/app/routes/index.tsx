@@ -1,28 +1,5 @@
-import { ActionFunction } from "@remix-run/cloudflare";
-import { MeasurementRequestForm } from "~/components/MeasurementReuestForm";
-import { Navbar } from "~/components/Navbar";
-import { Box } from "@chakra-ui/react";
+import { LoaderFunction, redirect } from "@remix-run/cloudflare";
 
-export const action: ActionFunction = async ({ request }) => {
-  const form = await request.formData();
-  const endpoint = form.get('endpoint');
-
-  // TODO: validation
-  // TODO: create Queue
-
-  // TODO: return Queue list
-  return {};
+export const loader: LoaderFunction = async ({ request }) => {
+  return redirect("/dashboard", { status: 302 });
 };
-
-const Index = () => {
-  return (
-    <>
-      <Box pos="fixed" w="100%">
-        <Navbar />
-      </Box>
-      <MeasurementRequestForm />
-    </>
-  );
-};
-
-export default Index;

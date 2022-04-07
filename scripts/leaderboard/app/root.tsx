@@ -18,7 +18,7 @@ import * as React from "react";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "Remix with Emotion",
+  title: "Frontend Performance Contest 2022",
   viewport: "width=device-width,initial-scale=1",
 });
 
@@ -77,7 +77,7 @@ const Document = withEmotionCache(
 
 export default function App() {
   return (
-    <Document title="Frontend Performance Contest 2022">
+    <Document>
       <ChakraProvider>
         <Outlet />
       </ChakraProvider>

@@ -14,11 +14,22 @@ import {
   Center,
   Heading,
 } from "@chakra-ui/react";
-
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { User } from "@supabase/supabase-js";
+import { useNavigate } from "@remix-run/react";
+import { useCallback } from "react";
 
-export const Navbar = () => {
+type Props = {
+  user: User | null;
+};
+
+export const Navbar = ({ user }: Props) => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const navi = useNavigate();
+  const goLogout = useCallback(() => {
+    navi("/auth/logout");
+  }, [navi]);
+
   return (
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
@@ -45,7 +56,7 @@ export const Navbar = () => {
                 >
                   <Avatar
                     size={"sm"}
-                    src={"https://avatars.dicebear.com/api/male/username.svg"}
+                    name={user?.user_metadata.name ?? user?.email ?? "no user"}
                   />
                 </MenuButton>
                 <MenuList alignItems={"center"}>
@@ -53,16 +64,18 @@ export const Navbar = () => {
                   <Center>
                     <Avatar
                       size={"2xl"}
-                      src={"https://avatars.dicebear.com/api/male/username.svg"}
+                      name={
+                        user?.user_metadata.name ?? user?.email ?? "no user"
+                      }
                     />
                   </Center>
                   <br />
                   <Center>
-                    <p>Username</p>
+                    <p>{user?.email ?? "no user"}</p>
                   </Center>
                   <br />
                   <MenuDivider />
-                  <MenuItem>Logout</MenuItem>
+                  <MenuItem onClick={goLogout}>Logout</MenuItem>
                 </MenuList>
               </Menu>
             </Stack>

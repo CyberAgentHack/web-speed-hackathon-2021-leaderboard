@@ -38,6 +38,8 @@ export const MeasurementRequestForm = () => {
           Request Measurement
         </Heading>
         <Form method='post'>
+          {/* TODO: fetch and set teamID */}
+          <input type="hidden" value='1' name='termId' />
           <Stack
             direction={{ base: "column", md: "row" }}
             spacing="12px"

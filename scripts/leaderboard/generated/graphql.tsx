@@ -763,6 +763,13 @@ export type _Prisma_MigrationsUpdateResponse = {
   records: Array<_Prisma_Migrations>;
 };
 
+export type LineupMutationVariables = Exact<{
+  teamId: Scalars['Int'];
+}>;
+
+
+export type LineupMutation = { __typename?: 'Mutation', insertIntoQueueCollection?: { __typename?: 'QueueInsertResponse', records: Array<{ __typename?: 'Queue', id: number, teamId: number }> } | null };
+
 export type SignupMutationVariables = Exact<{
   email: Scalars['String'];
   name?: InputMaybe<Scalars['String']>;
@@ -777,6 +784,42 @@ export type SampleQueryVariables = Exact<{ [key: string]: never; }>;
 export type SampleQuery = { __typename?: 'Query', queueCollection?: { __typename?: 'QueueConnection', edges: Array<{ __typename?: 'QueueEdge', node?: { __typename?: 'Queue', id: number } | null }> } | null };
 
 
+export const LineupDocument = gql`
+    mutation lineup($teamId: Int!) {
+  insertIntoQueueCollection(objects: [{teamId: $teamId, status: "RUNNING"}]) {
+    records {
+      id
+      teamId
+    }
+  }
+}
+    `;
+export type LineupMutationFn = Apollo.MutationFunction<LineupMutation, LineupMutationVariables>;
+
+/**
+ * __useLineupMutation__
+ *
+ * To run a mutation, you first call `useLineupMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useLineupMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [lineupMutation, { data, loading, error }] = useLineupMutation({
+ *   variables: {
+ *      teamId: // value for 'teamId'
+ *   },
+ * });
+ */
+export function useLineupMutation(baseOptions?: Apollo.MutationHookOptions<LineupMutation, LineupMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<LineupMutation, LineupMutationVariables>(LineupDocument, options);
+      }
+export type LineupMutationHookResult = ReturnType<typeof useLineupMutation>;
+export type LineupMutationResult = Apollo.MutationResult<LineupMutation>;
+export type LineupMutationOptions = Apollo.BaseMutationOptions<LineupMutation, LineupMutationVariables>;
 export const SignupDocument = gql`
     mutation signup($email: String!, $name: String) {
   insertIntoUserCollection(objects: [{email: $email, name: $name}]) {

@@ -1,0 +1,8 @@
+mutation lineup($teamId: Int!) {
+  insertIntoQueueCollection(objects: [{teamId: $teamId, status: "RUNNING"}]) {
+    records {
+      id
+      teamId
+    }
+  }
+}

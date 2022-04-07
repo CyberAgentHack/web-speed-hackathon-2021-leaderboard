@@ -6,16 +6,13 @@ import { skipAuth, supabaseStrategy } from "~/libs/auth.server";
 import { supabaseClient } from "~/libs/supabase.server";
 import { User } from "@supabase/supabase-js";
 import { useLoaderData } from "@remix-run/react";
-import { getSample } from '../../graphql/request/Sample';
+import { lineup } from '../../graphql/request/Queue';
 
 type Data = {
   user: User | null;
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const test = await getSample();
-  console.log(test);
-
   if (skipAuth) return { user: null };
 
   const session = await supabaseStrategy.checkSession(request, {
@@ -29,13 +26,11 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 export const action: ActionFunction = async ({ request }) => {
   const form = await request.formData();
-  const endpoint = form.get("endpoint");
 
   // TODO: validation
-  // TODO: create Queue
+  const queues = await lineup({ teamId: Number(form.get('termId')) });
 
-  // TODO: return Queue list
-  return {};
+  return queues?.data?.insertIntoQueueCollection?.records;
 };
 
 const Index = () => {

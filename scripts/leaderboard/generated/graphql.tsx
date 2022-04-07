@@ -778,12 +778,76 @@ export type SignupMutationVariables = Exact<{
 
 export type SignupMutation = { __typename?: 'Mutation', insertIntoUserCollection?: { __typename?: 'UserInsertResponse', records: Array<{ __typename?: 'User', id: number, email: string, name?: string | null }> } | null };
 
+export type CreateTeamMutationVariables = Exact<{
+  name: Scalars['String'];
+  pageUrl?: InputMaybe<Scalars['String']>;
+}>;
+
+
+export type CreateTeamMutation = { __typename?: 'Mutation', insertIntoTeamCollection?: { __typename?: 'TeamInsertResponse', records: Array<{ __typename?: 'Team', id: number }> } | null };
+
+export type JoinTeamMutationVariables = Exact<{
+  teamId: Scalars['Int'];
+  email: Scalars['String'];
+}>;
+
+
+export type JoinTeamMutation = { __typename?: 'Mutation', updateUserCollection: { __typename?: 'UserUpdateResponse', records: Array<{ __typename?: 'User', id: number, teamId?: number | null, team?: { __typename?: 'Team', id: number, name?: string | null, userCollection?: { __typename?: 'UserConnection', edges: Array<{ __typename?: 'UserEdge', node?: { __typename?: 'User', name?: string | null } | null }> } | null } | null }> } };
+
+export type LeaveTeamMutationVariables = Exact<{
+  email: Scalars['String'];
+}>;
+
+
+export type LeaveTeamMutation = { __typename?: 'Mutation', updateUserCollection: { __typename?: 'UserUpdateResponse', records: Array<{ __typename?: 'User', id: number }> } };
+
 export type SampleQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type SampleQuery = { __typename?: 'Query', queueCollection?: { __typename?: 'QueueConnection', edges: Array<{ __typename?: 'QueueEdge', node?: { __typename?: 'Queue', id: number } | null }> } | null };
 
+export type ListTeamsQueryVariables = Exact<{
+  cursor?: InputMaybe<Scalars['Cursor']>;
+}>;
 
+
+export type ListTeamsQuery = { __typename?: 'Query', teamCollection?: { __typename?: 'TeamConnection', pageInfo: { __typename?: 'PageInfo', endCursor?: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null }, edges: Array<{ __typename?: 'TeamEdge', node?: { __typename?: 'Team', id: number, name?: string | null, pageUrl?: string | null, userCollection?: { __typename?: 'UserConnection', edges: Array<{ __typename?: 'UserEdge', node?: { __typename?: 'User', id: number, name?: string | null, email: string } | null }> } | null } | null }> } | null };
+
+export type ListTeamsPrevQueryVariables = Exact<{
+  cursor?: InputMaybe<Scalars['Cursor']>;
+}>;
+
+
+export type ListTeamsPrevQuery = { __typename?: 'Query', teamCollection?: { __typename?: 'TeamConnection', pageInfo: { __typename?: 'PageInfo', endCursor?: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null }, edges: Array<{ __typename?: 'TeamEdge', node?: { __typename?: 'Team', id: number, name?: string | null, pageUrl?: string | null, userCollection?: { __typename?: 'UserConnection', edges: Array<{ __typename?: 'UserEdge', node?: { __typename?: 'User', id: number, name?: string | null, email: string } | null }> } | null } | null }> } | null };
+
+export type TeamsInfoFragment = { __typename?: 'TeamConnection', pageInfo: { __typename?: 'PageInfo', endCursor?: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null }, edges: Array<{ __typename?: 'TeamEdge', node?: { __typename?: 'Team', id: number, name?: string | null, pageUrl?: string | null, userCollection?: { __typename?: 'UserConnection', edges: Array<{ __typename?: 'UserEdge', node?: { __typename?: 'User', id: number, name?: string | null, email: string } | null }> } | null } | null }> };
+
+export const TeamsInfoFragmentDoc = gql`
+    fragment teamsInfo on TeamConnection {
+  pageInfo {
+    endCursor
+    hasNextPage
+    hasPreviousPage
+    startCursor
+  }
+  edges {
+    node {
+      id
+      name
+      pageUrl
+      userCollection {
+        edges {
+          node {
+            id
+            name
+            email
+          }
+        }
+      }
+    }
+  }
+}
+    `;
 export const LineupDocument = gql`
     mutation lineup($teamId: Int!) {
   insertIntoQueueCollection(objects: [{teamId: $teamId, status: "RUNNING"}]) {
@@ -858,6 +922,125 @@ export function useSignupMutation(baseOptions?: Apollo.MutationHookOptions<Signu
 export type SignupMutationHookResult = ReturnType<typeof useSignupMutation>;
 export type SignupMutationResult = Apollo.MutationResult<SignupMutation>;
 export type SignupMutationOptions = Apollo.BaseMutationOptions<SignupMutation, SignupMutationVariables>;
+export const CreateTeamDocument = gql`
+    mutation createTeam($name: String!, $pageUrl: String) {
+  insertIntoTeamCollection(objects: [{name: $name, pageUrl: $pageUrl}]) {
+    records {
+      id
+    }
+  }
+}
+    `;
+export type CreateTeamMutationFn = Apollo.MutationFunction<CreateTeamMutation, CreateTeamMutationVariables>;
+
+/**
+ * __useCreateTeamMutation__
+ *
+ * To run a mutation, you first call `useCreateTeamMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateTeamMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createTeamMutation, { data, loading, error }] = useCreateTeamMutation({
+ *   variables: {
+ *      name: // value for 'name'
+ *      pageUrl: // value for 'pageUrl'
+ *   },
+ * });
+ */
+export function useCreateTeamMutation(baseOptions?: Apollo.MutationHookOptions<CreateTeamMutation, CreateTeamMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<CreateTeamMutation, CreateTeamMutationVariables>(CreateTeamDocument, options);
+      }
+export type CreateTeamMutationHookResult = ReturnType<typeof useCreateTeamMutation>;
+export type CreateTeamMutationResult = Apollo.MutationResult<CreateTeamMutation>;
+export type CreateTeamMutationOptions = Apollo.BaseMutationOptions<CreateTeamMutation, CreateTeamMutationVariables>;
+export const JoinTeamDocument = gql`
+    mutation joinTeam($teamId: Int!, $email: String!) {
+  updateUserCollection(filter: {email: {eq: $email}}, set: {teamId: $teamId}) {
+    records {
+      id
+      teamId
+      team {
+        id
+        name
+        userCollection {
+          edges {
+            node {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+export type JoinTeamMutationFn = Apollo.MutationFunction<JoinTeamMutation, JoinTeamMutationVariables>;
+
+/**
+ * __useJoinTeamMutation__
+ *
+ * To run a mutation, you first call `useJoinTeamMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useJoinTeamMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [joinTeamMutation, { data, loading, error }] = useJoinTeamMutation({
+ *   variables: {
+ *      teamId: // value for 'teamId'
+ *      email: // value for 'email'
+ *   },
+ * });
+ */
+export function useJoinTeamMutation(baseOptions?: Apollo.MutationHookOptions<JoinTeamMutation, JoinTeamMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<JoinTeamMutation, JoinTeamMutationVariables>(JoinTeamDocument, options);
+      }
+export type JoinTeamMutationHookResult = ReturnType<typeof useJoinTeamMutation>;
+export type JoinTeamMutationResult = Apollo.MutationResult<JoinTeamMutation>;
+export type JoinTeamMutationOptions = Apollo.BaseMutationOptions<JoinTeamMutation, JoinTeamMutationVariables>;
+export const LeaveTeamDocument = gql`
+    mutation leaveTeam($email: String!) {
+  updateUserCollection(filter: {email: {eq: $email}}, set: {teamId: null}) {
+    records {
+      id
+    }
+  }
+}
+    `;
+export type LeaveTeamMutationFn = Apollo.MutationFunction<LeaveTeamMutation, LeaveTeamMutationVariables>;
+
+/**
+ * __useLeaveTeamMutation__
+ *
+ * To run a mutation, you first call `useLeaveTeamMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useLeaveTeamMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [leaveTeamMutation, { data, loading, error }] = useLeaveTeamMutation({
+ *   variables: {
+ *      email: // value for 'email'
+ *   },
+ * });
+ */
+export function useLeaveTeamMutation(baseOptions?: Apollo.MutationHookOptions<LeaveTeamMutation, LeaveTeamMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<LeaveTeamMutation, LeaveTeamMutationVariables>(LeaveTeamDocument, options);
+      }
+export type LeaveTeamMutationHookResult = ReturnType<typeof useLeaveTeamMutation>;
+export type LeaveTeamMutationResult = Apollo.MutationResult<LeaveTeamMutation>;
+export type LeaveTeamMutationOptions = Apollo.BaseMutationOptions<LeaveTeamMutation, LeaveTeamMutationVariables>;
 export const SampleDocument = gql`
     query sample {
   queueCollection {
@@ -896,6 +1079,76 @@ export function useSampleLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Sam
 export type SampleQueryHookResult = ReturnType<typeof useSampleQuery>;
 export type SampleLazyQueryHookResult = ReturnType<typeof useSampleLazyQuery>;
 export type SampleQueryResult = Apollo.QueryResult<SampleQuery, SampleQueryVariables>;
+export const ListTeamsDocument = gql`
+    query listTeams($cursor: Cursor) {
+  teamCollection(first: 30, after: $cursor, orderBy: [{createdAt: DescNullsLast}]) {
+    ...teamsInfo
+  }
+}
+    ${TeamsInfoFragmentDoc}`;
+
+/**
+ * __useListTeamsQuery__
+ *
+ * To run a query within a React component, call `useListTeamsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useListTeamsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useListTeamsQuery({
+ *   variables: {
+ *      cursor: // value for 'cursor'
+ *   },
+ * });
+ */
+export function useListTeamsQuery(baseOptions?: Apollo.QueryHookOptions<ListTeamsQuery, ListTeamsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<ListTeamsQuery, ListTeamsQueryVariables>(ListTeamsDocument, options);
+      }
+export function useListTeamsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ListTeamsQuery, ListTeamsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<ListTeamsQuery, ListTeamsQueryVariables>(ListTeamsDocument, options);
+        }
+export type ListTeamsQueryHookResult = ReturnType<typeof useListTeamsQuery>;
+export type ListTeamsLazyQueryHookResult = ReturnType<typeof useListTeamsLazyQuery>;
+export type ListTeamsQueryResult = Apollo.QueryResult<ListTeamsQuery, ListTeamsQueryVariables>;
+export const ListTeamsPrevDocument = gql`
+    query listTeamsPrev($cursor: Cursor) {
+  teamCollection(last: 30, before: $cursor, orderBy: [{createdAt: DescNullsLast}]) {
+    ...teamsInfo
+  }
+}
+    ${TeamsInfoFragmentDoc}`;
+
+/**
+ * __useListTeamsPrevQuery__
+ *
+ * To run a query within a React component, call `useListTeamsPrevQuery` and pass it any options that fit your needs.
+ * When your component renders, `useListTeamsPrevQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useListTeamsPrevQuery({
+ *   variables: {
+ *      cursor: // value for 'cursor'
+ *   },
+ * });
+ */
+export function useListTeamsPrevQuery(baseOptions?: Apollo.QueryHookOptions<ListTeamsPrevQuery, ListTeamsPrevQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<ListTeamsPrevQuery, ListTeamsPrevQueryVariables>(ListTeamsPrevDocument, options);
+      }
+export function useListTeamsPrevLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ListTeamsPrevQuery, ListTeamsPrevQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<ListTeamsPrevQuery, ListTeamsPrevQueryVariables>(ListTeamsPrevDocument, options);
+        }
+export type ListTeamsPrevQueryHookResult = ReturnType<typeof useListTeamsPrevQuery>;
+export type ListTeamsPrevLazyQueryHookResult = ReturnType<typeof useListTeamsPrevLazyQuery>;
+export type ListTeamsPrevQueryResult = Apollo.QueryResult<ListTeamsPrevQuery, ListTeamsPrevQueryVariables>;
 
       export interface PossibleTypesResultData {
         possibleTypes: {

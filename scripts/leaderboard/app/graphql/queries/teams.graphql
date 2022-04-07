@@ -1,0 +1,36 @@
+query listTeams ($cursor: Cursor) {
+  teamCollection (first: 30, after: $cursor, orderBy: [{ createdAt: DescNullsLast }]) {
+    ...teamsInfo
+  }
+}
+
+query listTeamsPrev ($cursor: Cursor) {
+  teamCollection (last: 30, before: $cursor, orderBy: [{ createdAt: DescNullsLast }]) {
+    ...teamsInfo
+  }
+}
+
+fragment teamsInfo on TeamConnection {
+  pageInfo {
+    endCursor
+    hasNextPage
+    hasPreviousPage
+    startCursor
+  }
+  edges {
+    node {
+      id
+      name
+      pageUrl
+      userCollection {
+        edges {
+          node {
+            id
+            name
+            email
+          }
+        }
+      }
+    }
+  }
+}

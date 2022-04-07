@@ -16,8 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { User } from "@supabase/supabase-js";
-import { useNavigate } from "@remix-run/react";
-import { useCallback } from "react";
+import { Link } from "@remix-run/react";
 
 type Props = {
   user: User | null;
@@ -25,19 +24,17 @@ type Props = {
 
 export const Navbar = ({ user }: Props) => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const navi = useNavigate();
-  const goLogout = useCallback(() => {
-    navi("/auth/logout");
-  }, [navi]);
 
   return (
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Box>
-            <Heading as="h1" fontSize={{ base: "xl", sm: "2xl" }}>
-              FPC 2022
-            </Heading>
+            <Link to="/dashboard">
+              <Heading as="h1" fontSize={{ base: "xl", sm: "2xl" }}>
+                FPC 2022
+              </Heading>
+            </Link>
           </Box>
 
           <Flex alignItems={"center"}>
@@ -52,7 +49,6 @@ export const Navbar = ({ user }: Props) => {
                   rounded={"full"}
                   variant={"link"}
                   cursor={"pointer"}
-                  minW={0}
                 >
                   <Avatar
                     size={"sm"}
@@ -75,7 +71,12 @@ export const Navbar = ({ user }: Props) => {
                   </Center>
                   <br />
                   <MenuDivider />
-                  <MenuItem onClick={goLogout}>Logout</MenuItem>
+                  <Link to="/dashboard/teams">
+                    <MenuItem pb={2}>Teams</MenuItem>
+                  </Link>
+                  <Link to="/auth/logout">
+                    <MenuItem pb={2}>Logout</MenuItem>
+                  </Link>
                 </MenuList>
               </Menu>
             </Stack>

@@ -1,0 +1,38 @@
+mutation createTeam ($name: String!, $pageUrl: String) {
+  insertIntoTeamCollection(objects: [{
+    name: $name
+    pageUrl: $pageUrl
+  }]) {
+    records {
+      id
+    }
+  }
+}
+
+mutation joinTeam ($teamId: Int!, $email: String!) {
+  updateUserCollection(filter: { email: { eq: $email } }, set: { teamId: $teamId }) {
+    records {
+      id
+      teamId
+      team {
+        id
+        name
+        userCollection {
+          edges {
+            node {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+mutation leaveTeam ($email: String!) {
+  updateUserCollection(filter: { email: { eq: $email } }, set: { teamId: null }) {
+    records {
+      id
+    }
+  }
+}

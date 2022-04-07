@@ -1,0 +1,835 @@
+scalar BigInt
+
+"""
+Boolean expression comparing fields on type "BigInt"
+"""
+input BigIntFilter {
+  eq: BigInt
+  gt: BigInt
+  gte: BigInt
+  lt: BigInt
+  lte: BigInt
+  neq: BigInt
+}
+
+"""
+Boolean expression comparing fields on type "Boolean"
+"""
+input BooleanFilter {
+  eq: Boolean
+  gt: Boolean
+  gte: Boolean
+  lt: Boolean
+  lte: Boolean
+  neq: Boolean
+}
+
+scalar Cursor
+
+scalar Date
+
+"""
+Boolean expression comparing fields on type "Date"
+"""
+input DateFilter {
+  eq: Date
+  gt: Date
+  gte: Date
+  lt: Date
+  lte: Date
+  neq: Date
+}
+
+scalar Datetime
+
+"""
+Boolean expression comparing fields on type "Datetime"
+"""
+input DatetimeFilter {
+  eq: Datetime
+  gt: Datetime
+  gte: Datetime
+  lt: Datetime
+  lte: Datetime
+  neq: Datetime
+}
+
+"""
+Boolean expression comparing fields on type "Float"
+"""
+input FloatFilter {
+  eq: Float
+  gt: Float
+  gte: Float
+  lt: Float
+  lte: Float
+  neq: Float
+}
+
+"""
+Boolean expression comparing fields on type "Int"
+"""
+input IntFilter {
+  eq: Int
+  gt: Int
+  gte: Int
+  lt: Int
+  lte: Int
+  neq: Int
+}
+
+scalar JSON
+
+"""
+Boolean expression comparing fields on type "JSON"
+"""
+input JSONFilter {
+  eq: JSON
+  neq: JSON
+}
+
+type Measurement {
+  id: Int!
+  teamId: Int!
+  score: Float!
+  createdAt: Datetime!
+  updatedAt: Datetime!
+  team: Team
+}
+
+type MeasurementConnection {
+  edges: [MeasurementEdge!]!
+  pageInfo: PageInfo!
+}
+
+type MeasurementDeleteResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [Measurement!]!
+}
+
+type MeasurementEdge {
+  cursor: String!
+  node: Measurement
+}
+
+input MeasurementFilter {
+  id: IntFilter
+  teamId: IntFilter
+  score: FloatFilter
+  createdAt: DatetimeFilter
+  updatedAt: DatetimeFilter
+}
+
+input MeasurementInsertInput {
+  teamId: Int
+  score: Float
+  createdAt: Datetime
+  updatedAt: Datetime
+}
+
+type MeasurementInsertResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [Measurement!]!
+}
+
+input MeasurementOrderBy {
+  id: OrderByDirection
+  teamId: OrderByDirection
+  score: OrderByDirection
+  createdAt: OrderByDirection
+  updatedAt: OrderByDirection
+}
+
+input MeasurementUpdateInput {
+  teamId: Int
+  score: Float
+  createdAt: Datetime
+  updatedAt: Datetime
+}
+
+type MeasurementUpdateResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [Measurement!]!
+}
+
+"""The root type for creating and mutating data"""
+type Mutation {
+  """Deletes zero or more records from the collection"""
+  deleteFromMeasurementCollection(
+    """Restricts the mutation's impact to records matching the critera"""
+    filter: MeasurementFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): MeasurementDeleteResponse!
+
+  """Deletes zero or more records from the collection"""
+  deleteFromQueueCollection(
+    """Restricts the mutation's impact to records matching the critera"""
+    filter: QueueFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): QueueDeleteResponse!
+
+  """Deletes zero or more records from the collection"""
+  deleteFromTeamCollection(
+    """Restricts the mutation's impact to records matching the critera"""
+    filter: TeamFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): TeamDeleteResponse!
+
+  """Deletes zero or more records from the collection"""
+  deleteFromUserCollection(
+    """Restricts the mutation's impact to records matching the critera"""
+    filter: UserFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): UserDeleteResponse!
+
+  """Deletes zero or more records from the collection"""
+  deleteFrom_prisma_migrationsCollection(
+    """Restricts the mutation's impact to records matching the critera"""
+    filter: _prisma_migrationsFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): _prisma_migrationsDeleteResponse!
+
+  """Adds one or more `MeasurementInsertResponse` records to the collection"""
+  insertIntoMeasurementCollection(objects: [MeasurementInsertInput!]!): MeasurementInsertResponse
+
+  """Adds one or more `QueueInsertResponse` records to the collection"""
+  insertIntoQueueCollection(objects: [QueueInsertInput!]!): QueueInsertResponse
+
+  """Adds one or more `TeamInsertResponse` records to the collection"""
+  insertIntoTeamCollection(objects: [TeamInsertInput!]!): TeamInsertResponse
+
+  """Adds one or more `UserInsertResponse` records to the collection"""
+  insertIntoUserCollection(objects: [UserInsertInput!]!): UserInsertResponse
+
+  """
+  Adds one or more `_prisma_migrationsInsertResponse` records to the collection
+  """
+  insertInto_prisma_migrationsCollection(objects: [_prisma_migrationsInsertInput!]!): _prisma_migrationsInsertResponse
+
+  """Updates zero or more records in the collection"""
+  updateMeasurementCollection(
+    """
+    Fields that are set will be updated for all records matching the `filter`
+    """
+    set: MeasurementUpdateInput!
+
+    """Restricts the mutation's impact to records matching the critera"""
+    filter: MeasurementFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): MeasurementUpdateResponse!
+
+  """Updates zero or more records in the collection"""
+  updateQueueCollection(
+    """
+    Fields that are set will be updated for all records matching the `filter`
+    """
+    set: QueueUpdateInput!
+
+    """Restricts the mutation's impact to records matching the critera"""
+    filter: QueueFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): QueueUpdateResponse!
+
+  """Updates zero or more records in the collection"""
+  updateTeamCollection(
+    """
+    Fields that are set will be updated for all records matching the `filter`
+    """
+    set: TeamUpdateInput!
+
+    """Restricts the mutation's impact to records matching the critera"""
+    filter: TeamFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): TeamUpdateResponse!
+
+  """Updates zero or more records in the collection"""
+  updateUserCollection(
+    """
+    Fields that are set will be updated for all records matching the `filter`
+    """
+    set: UserUpdateInput!
+
+    """Restricts the mutation's impact to records matching the critera"""
+    filter: UserFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): UserUpdateResponse!
+
+  """Updates zero or more records in the collection"""
+  update_prisma_migrationsCollection(
+    """
+    Fields that are set will be updated for all records matching the `filter`
+    """
+    set: _prisma_migrationsUpdateInput!
+
+    """Restricts the mutation's impact to records matching the critera"""
+    filter: _prisma_migrationsFilter
+
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+  ): _prisma_migrationsUpdateResponse!
+}
+
+"""Defines a per-field sorting order"""
+enum OrderByDirection {
+  AscNullsFirst
+  AscNullsLast
+  DescNullsFirst
+  DescNullsLast
+}
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+}
+
+"""The root type for querying data"""
+type Query {
+  """A pagable collection of type `_prisma_migrations`"""
+  _prisma_migrationsCollection(
+    """Query the first `n` records in the collection"""
+    first: Int
+
+    """Query the last `n` records in the collection"""
+    last: Int
+
+    """Query values in the collection before the provided cursor"""
+    before: Cursor
+
+    """Query values in the collection after the provided cursor"""
+    after: Cursor
+
+    """Filters to apply to the results set when querying from the collection"""
+    filter: _prisma_migrationsFilter
+
+    """Sort order to apply to the collection"""
+    orderBy: [_prisma_migrationsOrderBy!]
+  ): _prisma_migrationsConnection
+
+  """A pagable collection of type `Measurement`"""
+  measurementCollection(
+    """Query the first `n` records in the collection"""
+    first: Int
+
+    """Query the last `n` records in the collection"""
+    last: Int
+
+    """Query values in the collection before the provided cursor"""
+    before: Cursor
+
+    """Query values in the collection after the provided cursor"""
+    after: Cursor
+
+    """Filters to apply to the results set when querying from the collection"""
+    filter: MeasurementFilter
+
+    """Sort order to apply to the collection"""
+    orderBy: [MeasurementOrderBy!]
+  ): MeasurementConnection
+
+  """A pagable collection of type `Queue`"""
+  queueCollection(
+    """Query the first `n` records in the collection"""
+    first: Int
+
+    """Query the last `n` records in the collection"""
+    last: Int
+
+    """Query values in the collection before the provided cursor"""
+    before: Cursor
+
+    """Query values in the collection after the provided cursor"""
+    after: Cursor
+
+    """Filters to apply to the results set when querying from the collection"""
+    filter: QueueFilter
+
+    """Sort order to apply to the collection"""
+    orderBy: [QueueOrderBy!]
+  ): QueueConnection
+
+  """A pagable collection of type `Team`"""
+  teamCollection(
+    """Query the first `n` records in the collection"""
+    first: Int
+
+    """Query the last `n` records in the collection"""
+    last: Int
+
+    """Query values in the collection before the provided cursor"""
+    before: Cursor
+
+    """Query values in the collection after the provided cursor"""
+    after: Cursor
+
+    """Filters to apply to the results set when querying from the collection"""
+    filter: TeamFilter
+
+    """Sort order to apply to the collection"""
+    orderBy: [TeamOrderBy!]
+  ): TeamConnection
+
+  """A pagable collection of type `User`"""
+  userCollection(
+    """Query the first `n` records in the collection"""
+    first: Int
+
+    """Query the last `n` records in the collection"""
+    last: Int
+
+    """Query values in the collection before the provided cursor"""
+    before: Cursor
+
+    """Query values in the collection after the provided cursor"""
+    after: Cursor
+
+    """Filters to apply to the results set when querying from the collection"""
+    filter: UserFilter
+
+    """Sort order to apply to the collection"""
+    orderBy: [UserOrderBy!]
+  ): UserConnection
+}
+
+type Queue {
+  id: Int!
+  teamId: Int!
+  status: String!
+  team: Team
+}
+
+type QueueConnection {
+  edges: [QueueEdge!]!
+  pageInfo: PageInfo!
+}
+
+type QueueDeleteResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [Queue!]!
+}
+
+type QueueEdge {
+  cursor: String!
+  node: Queue
+}
+
+input QueueFilter {
+  id: IntFilter
+  teamId: IntFilter
+  status: StringFilter
+}
+
+input QueueInsertInput {
+  teamId: Int
+  status: String
+}
+
+type QueueInsertResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [Queue!]!
+}
+
+input QueueOrderBy {
+  id: OrderByDirection
+  teamId: OrderByDirection
+  status: OrderByDirection
+}
+
+input QueueUpdateInput {
+  teamId: Int
+  status: String
+}
+
+type QueueUpdateResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [Queue!]!
+}
+
+"""
+Boolean expression comparing fields on type "String"
+"""
+input StringFilter {
+  eq: String
+  gt: String
+  gte: String
+  lt: String
+  lte: String
+  neq: String
+}
+
+type Team {
+  id: Int!
+  name: String
+  pageUrl: String!
+  createdAt: Datetime!
+  updatedAt: Datetime!
+  measurementCollection(
+    """Query the first `n` records in the collection"""
+    first: Int
+
+    """Query the last `n` records in the collection"""
+    last: Int
+
+    """Query values in the collection before the provided cursor"""
+    before: Cursor
+
+    """Query values in the collection after the provided cursor"""
+    after: Cursor
+
+    """Filters to apply to the results set when querying from the collection"""
+    filter: MeasurementFilter
+
+    """Sort order to apply to the collection"""
+    orderBy: [MeasurementOrderBy!]
+  ): MeasurementConnection
+  queueCollection(
+    """Query the first `n` records in the collection"""
+    first: Int
+
+    """Query the last `n` records in the collection"""
+    last: Int
+
+    """Query values in the collection before the provided cursor"""
+    before: Cursor
+
+    """Query values in the collection after the provided cursor"""
+    after: Cursor
+
+    """Filters to apply to the results set when querying from the collection"""
+    filter: QueueFilter
+
+    """Sort order to apply to the collection"""
+    orderBy: [QueueOrderBy!]
+  ): QueueConnection
+  userCollection(
+    """Query the first `n` records in the collection"""
+    first: Int
+
+    """Query the last `n` records in the collection"""
+    last: Int
+
+    """Query values in the collection before the provided cursor"""
+    before: Cursor
+
+    """Query values in the collection after the provided cursor"""
+    after: Cursor
+
+    """Filters to apply to the results set when querying from the collection"""
+    filter: UserFilter
+
+    """Sort order to apply to the collection"""
+    orderBy: [UserOrderBy!]
+  ): UserConnection
+}
+
+type TeamConnection {
+  edges: [TeamEdge!]!
+  pageInfo: PageInfo!
+}
+
+type TeamDeleteResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [Team!]!
+}
+
+type TeamEdge {
+  cursor: String!
+  node: Team
+}
+
+input TeamFilter {
+  id: IntFilter
+  name: StringFilter
+  pageUrl: StringFilter
+  createdAt: DatetimeFilter
+  updatedAt: DatetimeFilter
+}
+
+input TeamInsertInput {
+  name: String
+  pageUrl: String
+  createdAt: Datetime
+  updatedAt: Datetime
+}
+
+type TeamInsertResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [Team!]!
+}
+
+input TeamOrderBy {
+  id: OrderByDirection
+  name: OrderByDirection
+  pageUrl: OrderByDirection
+  createdAt: OrderByDirection
+  updatedAt: OrderByDirection
+}
+
+input TeamUpdateInput {
+  name: String
+  pageUrl: String
+  createdAt: Datetime
+  updatedAt: Datetime
+}
+
+type TeamUpdateResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [Team!]!
+}
+
+scalar Time
+
+"""
+Boolean expression comparing fields on type "Time"
+"""
+input TimeFilter {
+  eq: Time
+  gt: Time
+  gte: Time
+  lt: Time
+  lte: Time
+  neq: Time
+}
+
+scalar UUID
+
+"""
+Boolean expression comparing fields on type "UUID"
+"""
+input UUIDFilter {
+  eq: UUID
+  neq: UUID
+}
+
+type User {
+  id: Int!
+  teamId: Int!
+  email: String!
+  name: String
+  createdAt: Datetime!
+  updatedAt: Datetime!
+  team: Team
+}
+
+type UserConnection {
+  edges: [UserEdge!]!
+  pageInfo: PageInfo!
+}
+
+type UserDeleteResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [User!]!
+}
+
+type UserEdge {
+  cursor: String!
+  node: User
+}
+
+input UserFilter {
+  id: IntFilter
+  teamId: IntFilter
+  email: StringFilter
+  name: StringFilter
+  createdAt: DatetimeFilter
+  updatedAt: DatetimeFilter
+}
+
+input UserInsertInput {
+  teamId: Int
+  email: String
+  name: String
+  createdAt: Datetime
+  updatedAt: Datetime
+}
+
+type UserInsertResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [User!]!
+}
+
+input UserOrderBy {
+  id: OrderByDirection
+  teamId: OrderByDirection
+  email: OrderByDirection
+  name: OrderByDirection
+  createdAt: OrderByDirection
+  updatedAt: OrderByDirection
+}
+
+input UserUpdateInput {
+  teamId: Int
+  email: String
+  name: String
+  createdAt: Datetime
+  updatedAt: Datetime
+}
+
+type UserUpdateResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [User!]!
+}
+
+type _prisma_migrations {
+  id: String!
+  checksum: String!
+  finished_at: Datetime
+  migration_name: String!
+  logs: String
+  rolled_back_at: Datetime
+  started_at: Datetime!
+  applied_steps_count: Int!
+}
+
+type _prisma_migrationsConnection {
+  edges: [_prisma_migrationsEdge!]!
+  pageInfo: PageInfo!
+}
+
+type _prisma_migrationsDeleteResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [_prisma_migrations!]!
+}
+
+type _prisma_migrationsEdge {
+  cursor: String!
+  node: _prisma_migrations
+}
+
+input _prisma_migrationsFilter {
+  id: StringFilter
+  checksum: StringFilter
+  finished_at: DatetimeFilter
+  migration_name: StringFilter
+  logs: StringFilter
+  rolled_back_at: DatetimeFilter
+  started_at: DatetimeFilter
+  applied_steps_count: IntFilter
+}
+
+input _prisma_migrationsInsertInput {
+  id: String
+  checksum: String
+  finished_at: Datetime
+  migration_name: String
+  logs: String
+  rolled_back_at: Datetime
+  started_at: Datetime
+  applied_steps_count: Int
+}
+
+type _prisma_migrationsInsertResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [_prisma_migrations!]!
+}
+
+input _prisma_migrationsOrderBy {
+  id: OrderByDirection
+  checksum: OrderByDirection
+  finished_at: OrderByDirection
+  migration_name: OrderByDirection
+  logs: OrderByDirection
+  rolled_back_at: OrderByDirection
+  started_at: OrderByDirection
+  applied_steps_count: OrderByDirection
+}
+
+input _prisma_migrationsUpdateInput {
+  id: String
+  checksum: String
+  finished_at: Datetime
+  migration_name: String
+  logs: String
+  rolled_back_at: Datetime
+  started_at: Datetime
+  applied_steps_count: Int
+}
+
+type _prisma_migrationsUpdateResponse {
+  """Count of the records impacted by the mutation"""
+  affectedCount: Int!
+
+  """Array of records impacted by the mutation"""
+  records: [_prisma_migrations!]!
+}

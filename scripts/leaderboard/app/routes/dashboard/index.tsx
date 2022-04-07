@@ -6,12 +6,16 @@ import { skipAuth, supabaseStrategy } from "~/libs/auth.server";
 import { supabaseClient } from "~/libs/supabase.server";
 import { User } from "@supabase/supabase-js";
 import { useLoaderData } from "@remix-run/react";
+import { getSample } from '../../graphql/request/Sample';
 
 type Data = {
   user: User | null;
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
+  const test = await getSample();
+  console.log(test);
+
   if (skipAuth) return { user: null };
 
   const session = await supabaseStrategy.checkSession(request, {

@@ -472,7 +472,7 @@ export type Team = {
   id: Scalars['Int'];
   measurementCollection?: Maybe<MeasurementConnection>;
   name?: Maybe<Scalars['String']>;
-  pageUrl: Scalars['String'];
+  pageUrl?: Maybe<Scalars['String']>;
   queueCollection?: Maybe<QueueConnection>;
   updatedAt: Scalars['Datetime'];
   userCollection?: Maybe<UserConnection>;
@@ -597,7 +597,7 @@ export type User = {
   id: Scalars['Int'];
   name?: Maybe<Scalars['String']>;
   team?: Maybe<Team>;
-  teamId: Scalars['Int'];
+  teamId?: Maybe<Scalars['Int']>;
   updatedAt: Scalars['Datetime'];
 };
 
@@ -763,12 +763,58 @@ export type _Prisma_MigrationsUpdateResponse = {
   records: Array<_Prisma_Migrations>;
 };
 
+export type SignupMutationVariables = Exact<{
+  email: Scalars['String'];
+  name?: InputMaybe<Scalars['String']>;
+}>;
+
+
+export type SignupMutation = { __typename?: 'Mutation', insertIntoUserCollection?: { __typename?: 'UserInsertResponse', records: Array<{ __typename?: 'User', id: number, email: string, name?: string | null }> } | null };
+
 export type SampleQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type SampleQuery = { __typename?: 'Query', queueCollection?: { __typename?: 'QueueConnection', edges: Array<{ __typename?: 'QueueEdge', node?: { __typename?: 'Queue', id: number } | null }> } | null };
 
 
+export const SignupDocument = gql`
+    mutation signup($email: String!, $name: String) {
+  insertIntoUserCollection(objects: [{email: $email, name: $name}]) {
+    records {
+      id
+      email
+      name
+    }
+  }
+}
+    `;
+export type SignupMutationFn = Apollo.MutationFunction<SignupMutation, SignupMutationVariables>;
+
+/**
+ * __useSignupMutation__
+ *
+ * To run a mutation, you first call `useSignupMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useSignupMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [signupMutation, { data, loading, error }] = useSignupMutation({
+ *   variables: {
+ *      email: // value for 'email'
+ *      name: // value for 'name'
+ *   },
+ * });
+ */
+export function useSignupMutation(baseOptions?: Apollo.MutationHookOptions<SignupMutation, SignupMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<SignupMutation, SignupMutationVariables>(SignupDocument, options);
+      }
+export type SignupMutationHookResult = ReturnType<typeof useSignupMutation>;
+export type SignupMutationResult = Apollo.MutationResult<SignupMutation>;
+export type SignupMutationOptions = Apollo.BaseMutationOptions<SignupMutation, SignupMutationVariables>;
 export const SampleDocument = gql`
     query sample {
   queueCollection {

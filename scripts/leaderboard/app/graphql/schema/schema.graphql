@@ -517,7 +517,7 @@ input StringFilter {
 type Team {
   id: Int!
   name: String
-  pageUrl: String!
+  pageUrl: String
   createdAt: Datetime!
   updatedAt: Datetime!
   measurementCollection(
@@ -669,7 +669,7 @@ input UUIDFilter {
 
 type User {
   id: Int!
-  teamId: Int!
+  teamId: Int
   email: String!
   name: String
   createdAt: Datetime!

@@ -3,10 +3,11 @@ import { createCookieSessionStorage } from "@remix-run/cloudflare";
 import { SupabaseStrategy } from "@afaik/remix-auth-supabase-strategy";
 import { supabaseClient } from "~/libs/supabase.server";
 import type { Session } from "@supabase/supabase-js";
+import { signup } from "~/graphql/request/Teaming";
 
 // for development
 export const skipAuth =
-  process.env.NODE_ENV === "development" && SUPABASE_API_KEY === "sample";
+  process.env.NODE_ENV === "development" && SUPABASE_ANON_KEY === "sample";
 
 export const sessionStorage = createCookieSessionStorage({
   cookie: {
@@ -32,9 +33,14 @@ export const supabaseStrategy = new SupabaseStrategy(
         refreshToken,
       });
 
-      if (error || !session) {
+      if (error || !session || !session.user?.email) {
         throw new AuthorizationError(error?.message ?? "No user session found");
       }
+
+      await signup({
+        email: session.user.email,
+        name: session.user.user_metadata.name ?? null,
+      });
 
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore

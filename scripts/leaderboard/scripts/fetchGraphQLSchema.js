@@ -3,6 +3,7 @@ const gradient = require("gradient-string");
 const path = require("path");
 const ProgressBar = require("progress");
 const { fetch } = require("cross-undici-fetch");
+require("dotenv").config();
 
 const {
   buildClientSchema,
@@ -46,7 +47,11 @@ function fetchGraphQLSchema(url, options) {
     });
 }
 
-const filePath = path.join(__dirname, "../app/graphql/schema/", "schema.graphql");
+const filePath = path.join(
+  __dirname,
+  "../app/graphql/schema/",
+  "schema.graphql"
+);
 
 console.log();
 

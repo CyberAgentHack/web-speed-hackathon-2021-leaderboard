@@ -1,0 +1,12 @@
+mutation signup($email: String!, $name: String) {
+  insertIntoUserCollection(objects: [{
+    email: $email
+    name: $name
+  }]) {
+    records {
+      id
+      email
+      name
+    }
+  }
+}

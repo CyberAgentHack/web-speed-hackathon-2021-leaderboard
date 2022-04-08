@@ -34,3 +34,17 @@ fragment teamsInfo on TeamConnection {
     }
   }
 }
+
+query myTeam ($email: String!) {
+  userCollection(filter: { email: { eq: $email } }, first: 1) {
+    edges {
+      node {
+        team {
+          id
+          name
+          pageUrl
+        }
+      }
+    }
+  }
+}

@@ -5,10 +5,6 @@ import { supabaseClient } from "~/libs/supabase.server";
 import type { Session } from "@supabase/supabase-js";
 import { signup } from "~/graphql/request/Teaming";
 
-// for development
-export const skipAuth =
-  process.env.NODE_ENV === "development" && SUPABASE_ANON_KEY === "sample";
-
 export const sessionStorage = createCookieSessionStorage({
   cookie: {
     name: "sb",

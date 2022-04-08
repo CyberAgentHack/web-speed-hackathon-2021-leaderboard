@@ -773,10 +773,11 @@ export type _Prisma_MigrationsUpdateResponse = {
 
 export type LineupMutationVariables = Exact<{
   teamId: Scalars['UUID'];
+  pageUrl: Scalars['String'];
 }>;
 
 
-export type LineupMutation = { __typename?: 'Mutation', insertIntoQueueCollection?: { __typename?: 'QueueInsertResponse', records: Array<{ __typename?: 'Queue', id: any, teamId: any }> } | null };
+export type LineupMutation = { __typename?: 'Mutation', insertIntoQueueCollection?: { __typename?: 'QueueInsertResponse', records: Array<{ __typename?: 'Queue', id: any, teamId: any }> } | null, updateTeamCollection: { __typename?: 'TeamUpdateResponse', records: Array<{ __typename?: 'Team', id: any, pageUrl?: string | null }> } };
 
 export type SignupMutationVariables = Exact<{
   email: Scalars['String'];
@@ -830,6 +831,13 @@ export type ListTeamsPrevQuery = { __typename?: 'Query', teamCollection?: { __ty
 
 export type TeamsInfoFragment = { __typename?: 'TeamConnection', pageInfo: { __typename?: 'PageInfo', endCursor?: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null }, edges: Array<{ __typename?: 'TeamEdge', node?: { __typename?: 'Team', id: any, name?: string | null, pageUrl?: string | null, userCollection?: { __typename?: 'UserConnection', edges: Array<{ __typename?: 'UserEdge', node?: { __typename?: 'User', id: any, name?: string | null, email: string } | null }> } | null } | null }> };
 
+export type MyTeamQueryVariables = Exact<{
+  email: Scalars['String'];
+}>;
+
+
+export type MyTeamQuery = { __typename?: 'Query', userCollection?: { __typename?: 'UserConnection', edges: Array<{ __typename?: 'UserEdge', node?: { __typename?: 'User', team?: { __typename?: 'Team', id: any, name?: string | null, pageUrl?: string | null } | null } | null }> } | null };
+
 export const TeamsInfoFragmentDoc = gql`
     fragment teamsInfo on TeamConnection {
   pageInfo {
@@ -857,11 +865,17 @@ export const TeamsInfoFragmentDoc = gql`
 }
     `;
 export const LineupDocument = gql`
-    mutation lineup($teamId: UUID!) {
+    mutation lineup($teamId: UUID!, $pageUrl: String!) {
   insertIntoQueueCollection(objects: [{teamId: $teamId, status: "RUNNING"}]) {
     records {
       id
       teamId
+    }
+  }
+  updateTeamCollection(filter: {id: {eq: $teamId}}, set: {pageUrl: $pageUrl}) {
+    records {
+      id
+      pageUrl
     }
   }
 }
@@ -882,6 +896,7 @@ export type LineupMutationFn = Apollo.MutationFunction<LineupMutation, LineupMut
  * const [lineupMutation, { data, loading, error }] = useLineupMutation({
  *   variables: {
  *      teamId: // value for 'teamId'
+ *      pageUrl: // value for 'pageUrl'
  *   },
  * });
  */
@@ -1156,6 +1171,49 @@ export function useListTeamsPrevLazyQuery(baseOptions?: Apollo.LazyQueryHookOpti
 export type ListTeamsPrevQueryHookResult = ReturnType<typeof useListTeamsPrevQuery>;
 export type ListTeamsPrevLazyQueryHookResult = ReturnType<typeof useListTeamsPrevLazyQuery>;
 export type ListTeamsPrevQueryResult = Apollo.QueryResult<ListTeamsPrevQuery, ListTeamsPrevQueryVariables>;
+export const MyTeamDocument = gql`
+    query myTeam($email: String!) {
+  userCollection(filter: {email: {eq: $email}}, first: 1) {
+    edges {
+      node {
+        team {
+          id
+          name
+          pageUrl
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useMyTeamQuery__
+ *
+ * To run a query within a React component, call `useMyTeamQuery` and pass it any options that fit your needs.
+ * When your component renders, `useMyTeamQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useMyTeamQuery({
+ *   variables: {
+ *      email: // value for 'email'
+ *   },
+ * });
+ */
+export function useMyTeamQuery(baseOptions: Apollo.QueryHookOptions<MyTeamQuery, MyTeamQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<MyTeamQuery, MyTeamQueryVariables>(MyTeamDocument, options);
+      }
+export function useMyTeamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<MyTeamQuery, MyTeamQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<MyTeamQuery, MyTeamQueryVariables>(MyTeamDocument, options);
+        }
+export type MyTeamQueryHookResult = ReturnType<typeof useMyTeamQuery>;
+export type MyTeamLazyQueryHookResult = ReturnType<typeof useMyTeamLazyQuery>;
+export type MyTeamQueryResult = Apollo.QueryResult<MyTeamQuery, MyTeamQueryVariables>;
 
       export interface PossibleTypesResultData {
         possibleTypes: {

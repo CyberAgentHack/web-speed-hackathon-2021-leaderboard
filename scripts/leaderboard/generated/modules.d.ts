@@ -43,6 +43,7 @@ declare module '*/teams.graphql' {
   export const listTeams: DocumentNode;
 export const listTeamsPrev: DocumentNode;
 export const teamsInfo: DocumentNode;
+export const myTeam: DocumentNode;
 
   export default defaultDocument;
 }

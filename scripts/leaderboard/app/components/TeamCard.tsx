@@ -13,7 +13,7 @@ import { PrimaryButton } from "~/components/atoms/Button";
 import { Form } from "@remix-run/react";
 
 type Props = {
-  id: number;
+  id: string;
   name: string;
   members: string[];
   joinable?: boolean;

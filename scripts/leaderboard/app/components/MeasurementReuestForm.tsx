@@ -4,14 +4,19 @@ import {
   Stack,
   FormControl,
   Input,
-  Button,
   useColorModeValue,
   Heading,
   Container,
   Flex,
 } from "@chakra-ui/react";
+import { PrimaryButton } from "~/components/atoms/Button";
 
-export const MeasurementRequestForm = () => {
+type Props = {
+  teamId: string;
+  url?: string;
+};
+
+export const MeasurementRequestForm = ({ teamId, url }: Props) => {
   // TODO: display error
   const errors = useActionData();
 
@@ -38,12 +43,7 @@ export const MeasurementRequestForm = () => {
           Request Measurement
         </Heading>
         <Form method="post">
-          {/* TODO: fetch and set teamID */}
-          <input
-            type="hidden"
-            value="eba2c0c1-6c2d-43f5-82f8-36ecb1410ce6"
-            name="termId"
-          />
+          <input type="hidden" value={teamId} name="termId" />
           <Stack direction={{ base: "column", md: "row" }} spacing="12px">
             <FormControl>
               <Input
@@ -57,12 +57,14 @@ export const MeasurementRequestForm = () => {
                 type="url"
                 required
                 placeholder="Your Page URL"
+                defaultValue={url ?? ""}
+                name="pageUrl"
               />
             </FormControl>
             <FormControl w={{ base: "100%", md: "40%" }}>
-              <Button colorScheme="blue" w="100%" type="submit">
+              <PrimaryButton w="full" type="submit">
                 Request
-              </Button>
+              </PrimaryButton>
             </FormControl>
           </Stack>
         </Form>

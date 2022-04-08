@@ -1,8 +1,14 @@
-mutation lineup($teamId: UUID!) {
+mutation lineup($teamId: UUID!, $pageUrl: String!) {
   insertIntoQueueCollection(objects: [{teamId: $teamId, status: "RUNNING"}]) {
     records {
       id
       teamId
+    }
+  }
+  updateTeamCollection(filter: { id: { eq: $teamId } }, set: { pageUrl: $pageUrl }) {
+    records {
+      id
+      pageUrl
     }
   }
 }

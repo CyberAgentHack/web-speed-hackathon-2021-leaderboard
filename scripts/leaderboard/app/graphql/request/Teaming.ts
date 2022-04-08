@@ -10,6 +10,9 @@ import {
   ListTeamsPrevDocument,
   ListTeamsPrevQuery,
   ListTeamsQuery,
+  MyTeamDocument,
+  MyTeamQuery,
+  MyTeamQueryVariables,
   SignupDocument,
   SignupMutation,
   SignupMutationVariables,
@@ -75,4 +78,12 @@ export const listTeams = async (cursor: string | null, prev = false) => {
         cursor,
       },
     });
+};
+
+export const getMyTeam = async (variables: MyTeamQueryVariables) => {
+  const { data } = await client.query<MyTeamQuery>({
+    query: MyTeamDocument,
+    variables,
+  });
+  return data.userCollection?.edges[0].node?.team;
 };

@@ -1,6 +1,5 @@
 import { LoaderFunction } from "@remix-run/cloudflare";
 import { skipAuth, supabaseStrategy } from "~/libs/auth.server";
-import { supabaseClient } from "~/libs/supabase.server";
 import { useLoaderData, Outlet } from "@remix-run/react";
 import { Box, Container } from "@chakra-ui/react";
 import { Navbar } from "~/components/Navbar";
@@ -19,9 +18,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 
   // TODO: redirect /dashboard/teams if user is not joined a team
 
-  const { user } = await supabaseClient.auth.api.getUser(session.access_token);
-
-  return { user } as Data;
+  return { user: session.user } as Data;
 };
 
 const Layout = () => {

@@ -1,6 +1,6 @@
 import { Authenticator, AuthorizationError } from "remix-auth";
 import { createCookieSessionStorage } from "@remix-run/cloudflare";
-import { SupabaseStrategy } from "@afaik/remix-auth-supabase-strategy";
+import { SupabaseStrategy } from "remix-auth-supabase";
 import { supabaseClient } from "~/libs/supabase.server";
 import type { Session } from "@supabase/supabase-js";
 import { signup } from "~/graphql/request/Teaming";
@@ -42,9 +42,6 @@ export const supabaseStrategy = new SupabaseStrategy(
         name: session.user.user_metadata.name ?? null,
       });
 
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      delete session.user;
       return session;
     }
 

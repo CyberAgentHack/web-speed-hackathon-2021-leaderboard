@@ -24,8 +24,8 @@ export const signup = async (variables: SignupMutationVariables) => {
     });
   } catch (e) {
     if (e instanceof ApolloError) {
-      const msg = e.graphQLErrors[0];
-      if (isString(msg) && msg.includes("duplicate key")) return null;
+      const error = e.graphQLErrors[0];
+      if (error.message.includes("duplicate key")) return null;
     }
     console.error(e);
 
@@ -65,5 +65,3 @@ export const listTeams = async (cursor: string | null, prev = false) => {
       },
     });
 };
-
-const isString = (e: unknown): e is string => typeof e === "string";

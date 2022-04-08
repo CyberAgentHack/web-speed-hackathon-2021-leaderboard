@@ -89,11 +89,11 @@ input JSONFilter {
 }
 
 type Measurement {
-  id: Int!
-  teamId: Int!
   score: Float!
   createdAt: Datetime!
   updatedAt: Datetime!
+  id: UUID!
+  teamId: UUID!
   team: Team
 }
 
@@ -116,18 +116,19 @@ type MeasurementEdge {
 }
 
 input MeasurementFilter {
-  id: IntFilter
-  teamId: IntFilter
   score: FloatFilter
   createdAt: DatetimeFilter
   updatedAt: DatetimeFilter
+  id: UUIDFilter
+  teamId: UUIDFilter
 }
 
 input MeasurementInsertInput {
-  teamId: Int
   score: Float
   createdAt: Datetime
   updatedAt: Datetime
+  id: UUID
+  teamId: UUID
 }
 
 type MeasurementInsertResponse {
@@ -139,18 +140,19 @@ type MeasurementInsertResponse {
 }
 
 input MeasurementOrderBy {
-  id: OrderByDirection
-  teamId: OrderByDirection
   score: OrderByDirection
   createdAt: OrderByDirection
   updatedAt: OrderByDirection
+  id: OrderByDirection
+  teamId: OrderByDirection
 }
 
 input MeasurementUpdateInput {
-  teamId: Int
   score: Float
   createdAt: Datetime
   updatedAt: Datetime
+  id: UUID
+  teamId: UUID
 }
 
 type MeasurementUpdateResponse {
@@ -440,9 +442,9 @@ type Query {
 }
 
 type Queue {
-  id: Int!
-  teamId: Int!
   status: String!
+  id: UUID!
+  teamId: UUID!
   team: Team
 }
 
@@ -465,14 +467,15 @@ type QueueEdge {
 }
 
 input QueueFilter {
-  id: IntFilter
-  teamId: IntFilter
   status: StringFilter
+  id: UUIDFilter
+  teamId: UUIDFilter
 }
 
 input QueueInsertInput {
-  teamId: Int
   status: String
+  id: UUID
+  teamId: UUID
 }
 
 type QueueInsertResponse {
@@ -484,14 +487,15 @@ type QueueInsertResponse {
 }
 
 input QueueOrderBy {
+  status: OrderByDirection
   id: OrderByDirection
   teamId: OrderByDirection
-  status: OrderByDirection
 }
 
 input QueueUpdateInput {
-  teamId: Int
   status: String
+  id: UUID
+  teamId: UUID
 }
 
 type QueueUpdateResponse {
@@ -515,11 +519,11 @@ input StringFilter {
 }
 
 type Team {
-  id: Int!
   name: String
   pageUrl: String
   createdAt: Datetime!
   updatedAt: Datetime!
+  id: UUID!
   measurementCollection(
     """Query the first `n` records in the collection"""
     first: Int
@@ -598,11 +602,11 @@ type TeamEdge {
 }
 
 input TeamFilter {
-  id: IntFilter
   name: StringFilter
   pageUrl: StringFilter
   createdAt: DatetimeFilter
   updatedAt: DatetimeFilter
+  id: UUIDFilter
 }
 
 input TeamInsertInput {
@@ -610,6 +614,7 @@ input TeamInsertInput {
   pageUrl: String
   createdAt: Datetime
   updatedAt: Datetime
+  id: UUID
 }
 
 type TeamInsertResponse {
@@ -621,11 +626,11 @@ type TeamInsertResponse {
 }
 
 input TeamOrderBy {
-  id: OrderByDirection
   name: OrderByDirection
   pageUrl: OrderByDirection
   createdAt: OrderByDirection
   updatedAt: OrderByDirection
+  id: OrderByDirection
 }
 
 input TeamUpdateInput {
@@ -633,6 +638,7 @@ input TeamUpdateInput {
   pageUrl: String
   createdAt: Datetime
   updatedAt: Datetime
+  id: UUID
 }
 
 type TeamUpdateResponse {
@@ -668,12 +674,12 @@ input UUIDFilter {
 }
 
 type User {
-  id: Int!
-  teamId: Int
   email: String!
   name: String
   createdAt: Datetime!
   updatedAt: Datetime!
+  id: UUID!
+  teamId: UUID
   team: Team
 }
 
@@ -696,20 +702,21 @@ type UserEdge {
 }
 
 input UserFilter {
-  id: IntFilter
-  teamId: IntFilter
   email: StringFilter
   name: StringFilter
   createdAt: DatetimeFilter
   updatedAt: DatetimeFilter
+  id: UUIDFilter
+  teamId: UUIDFilter
 }
 
 input UserInsertInput {
-  teamId: Int
   email: String
   name: String
   createdAt: Datetime
   updatedAt: Datetime
+  id: UUID
+  teamId: UUID
 }
 
 type UserInsertResponse {
@@ -721,20 +728,21 @@ type UserInsertResponse {
 }
 
 input UserOrderBy {
-  id: OrderByDirection
-  teamId: OrderByDirection
   email: OrderByDirection
   name: OrderByDirection
   createdAt: OrderByDirection
   updatedAt: OrderByDirection
+  id: OrderByDirection
+  teamId: OrderByDirection
 }
 
 input UserUpdateInput {
-  teamId: Int
   email: String
   name: String
   createdAt: Datetime
   updatedAt: Datetime
+  id: UUID
+  teamId: UUID
 }
 
 type UserUpdateResponse {

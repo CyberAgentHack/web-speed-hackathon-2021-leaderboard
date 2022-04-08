@@ -3,8 +3,8 @@ import {
   CreateTeamDocument,
   CreateTeamMutation,
   CreateTeamMutationVariables,
-  JoinTeamDocument,
-  JoinTeamMutation,
+  // JoinTeamDocument,
+  // JoinTeamMutation,
   JoinTeamMutationVariables,
   ListTeamsDocument,
   ListTeamsPrevDocument,
@@ -15,6 +15,7 @@ import {
   SignupMutationVariables,
 } from "generated/graphql";
 import { ApolloError } from "@apollo/client";
+import { supabaseClient } from "~/libs/supabase.server";
 
 export const signup = async (variables: SignupMutationVariables) => {
   try {
@@ -43,10 +44,20 @@ export const createTeam = async (variables: CreateTeamMutationVariables) => {
 };
 
 export const joinTeam = async (variables: JoinTeamMutationVariables) => {
-  return client.mutate<JoinTeamMutation>({
-    mutation: JoinTeamDocument,
-    variables,
-  });
+  const { data } = await supabaseClient
+    .from("User")
+    .update({ teamId: variables.teamId })
+    .match({ email: variables.email });
+
+  await client.clearStore();
+
+  return data;
+
+  // TODO: When the error on the supabase side is resolved, revert back to this code.
+  // return client.mutate<JoinTeamMutation>({
+  //   mutation: JoinTeamDocument,
+  //   variables,
+  // });
 };
 
 export const listTeams = async (cursor: string | null, prev = false) => {

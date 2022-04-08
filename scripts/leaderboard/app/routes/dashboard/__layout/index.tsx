@@ -14,7 +14,7 @@ export const action: ActionFunction = async ({ request }) => {
   const form = await request.formData();
 
   // TODO: validation
-  const queues = await lineup({ teamId: Number(form.get("termId")) });
+  const queues = await lineup({ teamId: form.get("termId") });
 
   return queues?.data?.insertIntoQueueCollection?.records;
 };

@@ -10,15 +10,23 @@ import {
 } from "@chakra-ui/react";
 import { BsFillPersonFill } from "react-icons/bs";
 import { PrimaryButton } from "~/components/atoms/Button";
+import { Form } from "@remix-run/react";
 
 type Props = {
   id: number;
   name: string;
   members: string[];
   joinable?: boolean;
+  mine?: boolean;
 };
 
-export const TeamCard = ({ name, members, joinable = false }: Props) => {
+export const TeamCard = ({
+  id,
+  name,
+  members,
+  joinable = false,
+  mine = false,
+}: Props) => {
   return (
     <Center py={6}>
       <Box
@@ -27,6 +35,7 @@ export const TeamCard = ({ name, members, joinable = false }: Props) => {
         boxShadow={"2xl"}
         rounded={"md"}
         overflow={"hidden"}
+        {...(mine ? { border: "2px", borderColor: "green.200" } : {})}
       >
         <Stack
           textAlign={"center"}
@@ -58,9 +67,18 @@ export const TeamCard = ({ name, members, joinable = false }: Props) => {
             )}
           </List>
 
-          <PrimaryButton mt={10} w={"full"}>
-            Join
-          </PrimaryButton>
+          <Form method="post">
+            <input type="hidden" name="teamId" value={id} />
+            <PrimaryButton
+              mt={10}
+              w={"full"}
+              type="submit"
+              name="join"
+              disabled={!joinable || mine}
+            >
+              Join
+            </PrimaryButton>
+          </Form>
         </Box>
       </Box>
     </Center>

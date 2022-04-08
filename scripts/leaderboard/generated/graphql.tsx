@@ -91,10 +91,10 @@ export type JsonFilter = {
 export type Measurement = {
   __typename?: 'Measurement';
   createdAt: Scalars['Datetime'];
-  id: Scalars['Int'];
+  id: Scalars['UUID'];
   score: Scalars['Float'];
   team?: Maybe<Team>;
-  teamId: Scalars['Int'];
+  teamId: Scalars['UUID'];
   updatedAt: Scalars['Datetime'];
 };
 
@@ -120,16 +120,17 @@ export type MeasurementEdge = {
 
 export type MeasurementFilter = {
   createdAt?: InputMaybe<DatetimeFilter>;
-  id?: InputMaybe<IntFilter>;
+  id?: InputMaybe<UuidFilter>;
   score?: InputMaybe<FloatFilter>;
-  teamId?: InputMaybe<IntFilter>;
+  teamId?: InputMaybe<UuidFilter>;
   updatedAt?: InputMaybe<DatetimeFilter>;
 };
 
 export type MeasurementInsertInput = {
   createdAt?: InputMaybe<Scalars['Datetime']>;
+  id?: InputMaybe<Scalars['UUID']>;
   score?: InputMaybe<Scalars['Float']>;
-  teamId?: InputMaybe<Scalars['Int']>;
+  teamId?: InputMaybe<Scalars['UUID']>;
   updatedAt?: InputMaybe<Scalars['Datetime']>;
 };
 
@@ -151,8 +152,9 @@ export type MeasurementOrderBy = {
 
 export type MeasurementUpdateInput = {
   createdAt?: InputMaybe<Scalars['Datetime']>;
+  id?: InputMaybe<Scalars['UUID']>;
   score?: InputMaybe<Scalars['Float']>;
-  teamId?: InputMaybe<Scalars['Int']>;
+  teamId?: InputMaybe<Scalars['UUID']>;
   updatedAt?: InputMaybe<Scalars['Datetime']>;
 };
 
@@ -392,10 +394,10 @@ export type QueryUserCollectionArgs = {
 
 export type Queue = {
   __typename?: 'Queue';
-  id: Scalars['Int'];
+  id: Scalars['UUID'];
   status: Scalars['String'];
   team?: Maybe<Team>;
-  teamId: Scalars['Int'];
+  teamId: Scalars['UUID'];
 };
 
 export type QueueConnection = {
@@ -419,14 +421,15 @@ export type QueueEdge = {
 };
 
 export type QueueFilter = {
-  id?: InputMaybe<IntFilter>;
+  id?: InputMaybe<UuidFilter>;
   status?: InputMaybe<StringFilter>;
-  teamId?: InputMaybe<IntFilter>;
+  teamId?: InputMaybe<UuidFilter>;
 };
 
 export type QueueInsertInput = {
+  id?: InputMaybe<Scalars['UUID']>;
   status?: InputMaybe<Scalars['String']>;
-  teamId?: InputMaybe<Scalars['Int']>;
+  teamId?: InputMaybe<Scalars['UUID']>;
 };
 
 export type QueueInsertResponse = {
@@ -444,8 +447,9 @@ export type QueueOrderBy = {
 };
 
 export type QueueUpdateInput = {
+  id?: InputMaybe<Scalars['UUID']>;
   status?: InputMaybe<Scalars['String']>;
-  teamId?: InputMaybe<Scalars['Int']>;
+  teamId?: InputMaybe<Scalars['UUID']>;
 };
 
 export type QueueUpdateResponse = {
@@ -469,7 +473,7 @@ export type StringFilter = {
 export type Team = {
   __typename?: 'Team';
   createdAt: Scalars['Datetime'];
-  id: Scalars['Int'];
+  id: Scalars['UUID'];
   measurementCollection?: Maybe<MeasurementConnection>;
   name?: Maybe<Scalars['String']>;
   pageUrl?: Maybe<Scalars['String']>;
@@ -530,7 +534,7 @@ export type TeamEdge = {
 
 export type TeamFilter = {
   createdAt?: InputMaybe<DatetimeFilter>;
-  id?: InputMaybe<IntFilter>;
+  id?: InputMaybe<UuidFilter>;
   name?: InputMaybe<StringFilter>;
   pageUrl?: InputMaybe<StringFilter>;
   updatedAt?: InputMaybe<DatetimeFilter>;
@@ -538,6 +542,7 @@ export type TeamFilter = {
 
 export type TeamInsertInput = {
   createdAt?: InputMaybe<Scalars['Datetime']>;
+  id?: InputMaybe<Scalars['UUID']>;
   name?: InputMaybe<Scalars['String']>;
   pageUrl?: InputMaybe<Scalars['String']>;
   updatedAt?: InputMaybe<Scalars['Datetime']>;
@@ -561,6 +566,7 @@ export type TeamOrderBy = {
 
 export type TeamUpdateInput = {
   createdAt?: InputMaybe<Scalars['Datetime']>;
+  id?: InputMaybe<Scalars['UUID']>;
   name?: InputMaybe<Scalars['String']>;
   pageUrl?: InputMaybe<Scalars['String']>;
   updatedAt?: InputMaybe<Scalars['Datetime']>;
@@ -594,10 +600,10 @@ export type User = {
   __typename?: 'User';
   createdAt: Scalars['Datetime'];
   email: Scalars['String'];
-  id: Scalars['Int'];
+  id: Scalars['UUID'];
   name?: Maybe<Scalars['String']>;
   team?: Maybe<Team>;
-  teamId?: Maybe<Scalars['Int']>;
+  teamId?: Maybe<Scalars['UUID']>;
   updatedAt: Scalars['Datetime'];
 };
 
@@ -624,17 +630,18 @@ export type UserEdge = {
 export type UserFilter = {
   createdAt?: InputMaybe<DatetimeFilter>;
   email?: InputMaybe<StringFilter>;
-  id?: InputMaybe<IntFilter>;
+  id?: InputMaybe<UuidFilter>;
   name?: InputMaybe<StringFilter>;
-  teamId?: InputMaybe<IntFilter>;
+  teamId?: InputMaybe<UuidFilter>;
   updatedAt?: InputMaybe<DatetimeFilter>;
 };
 
 export type UserInsertInput = {
   createdAt?: InputMaybe<Scalars['Datetime']>;
   email?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['UUID']>;
   name?: InputMaybe<Scalars['String']>;
-  teamId?: InputMaybe<Scalars['Int']>;
+  teamId?: InputMaybe<Scalars['UUID']>;
   updatedAt?: InputMaybe<Scalars['Datetime']>;
 };
 
@@ -658,8 +665,9 @@ export type UserOrderBy = {
 export type UserUpdateInput = {
   createdAt?: InputMaybe<Scalars['Datetime']>;
   email?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['UUID']>;
   name?: InputMaybe<Scalars['String']>;
-  teamId?: InputMaybe<Scalars['Int']>;
+  teamId?: InputMaybe<Scalars['UUID']>;
   updatedAt?: InputMaybe<Scalars['Datetime']>;
 };
 
@@ -764,11 +772,11 @@ export type _Prisma_MigrationsUpdateResponse = {
 };
 
 export type LineupMutationVariables = Exact<{
-  teamId: Scalars['Int'];
+  teamId: Scalars['UUID'];
 }>;
 
 
-export type LineupMutation = { __typename?: 'Mutation', insertIntoQueueCollection?: { __typename?: 'QueueInsertResponse', records: Array<{ __typename?: 'Queue', id: number, teamId: number }> } | null };
+export type LineupMutation = { __typename?: 'Mutation', insertIntoQueueCollection?: { __typename?: 'QueueInsertResponse', records: Array<{ __typename?: 'Queue', id: any, teamId: any }> } | null };
 
 export type SignupMutationVariables = Exact<{
   email: Scalars['String'];
@@ -776,7 +784,7 @@ export type SignupMutationVariables = Exact<{
 }>;
 
 
-export type SignupMutation = { __typename?: 'Mutation', insertIntoUserCollection?: { __typename?: 'UserInsertResponse', records: Array<{ __typename?: 'User', id: number, email: string, name?: string | null }> } | null };
+export type SignupMutation = { __typename?: 'Mutation', insertIntoUserCollection?: { __typename?: 'UserInsertResponse', records: Array<{ __typename?: 'User', id: any, email: string, name?: string | null }> } | null };
 
 export type CreateTeamMutationVariables = Exact<{
   name: Scalars['String'];
@@ -784,43 +792,43 @@ export type CreateTeamMutationVariables = Exact<{
 }>;
 
 
-export type CreateTeamMutation = { __typename?: 'Mutation', insertIntoTeamCollection?: { __typename?: 'TeamInsertResponse', records: Array<{ __typename?: 'Team', id: number }> } | null };
+export type CreateTeamMutation = { __typename?: 'Mutation', insertIntoTeamCollection?: { __typename?: 'TeamInsertResponse', records: Array<{ __typename?: 'Team', id: any }> } | null };
 
 export type JoinTeamMutationVariables = Exact<{
-  teamId: Scalars['Int'];
+  teamId: Scalars['UUID'];
   email: Scalars['String'];
 }>;
 
 
-export type JoinTeamMutation = { __typename?: 'Mutation', updateUserCollection: { __typename?: 'UserUpdateResponse', records: Array<{ __typename?: 'User', id: number, teamId?: number | null, team?: { __typename?: 'Team', id: number, name?: string | null, userCollection?: { __typename?: 'UserConnection', edges: Array<{ __typename?: 'UserEdge', node?: { __typename?: 'User', name?: string | null } | null }> } | null } | null }> } };
+export type JoinTeamMutation = { __typename?: 'Mutation', updateUserCollection: { __typename?: 'UserUpdateResponse', records: Array<{ __typename?: 'User', id: any, team?: { __typename?: 'Team', id: any, name?: string | null, userCollection?: { __typename?: 'UserConnection', edges: Array<{ __typename?: 'UserEdge', node?: { __typename?: 'User', name?: string | null } | null }> } | null } | null }> } };
 
 export type LeaveTeamMutationVariables = Exact<{
   email: Scalars['String'];
 }>;
 
 
-export type LeaveTeamMutation = { __typename?: 'Mutation', updateUserCollection: { __typename?: 'UserUpdateResponse', records: Array<{ __typename?: 'User', id: number }> } };
+export type LeaveTeamMutation = { __typename?: 'Mutation', updateUserCollection: { __typename?: 'UserUpdateResponse', records: Array<{ __typename?: 'User', id: any }> } };
 
 export type SampleQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type SampleQuery = { __typename?: 'Query', queueCollection?: { __typename?: 'QueueConnection', edges: Array<{ __typename?: 'QueueEdge', node?: { __typename?: 'Queue', id: number } | null }> } | null };
+export type SampleQuery = { __typename?: 'Query', queueCollection?: { __typename?: 'QueueConnection', edges: Array<{ __typename?: 'QueueEdge', node?: { __typename?: 'Queue', id: any } | null }> } | null };
 
 export type ListTeamsQueryVariables = Exact<{
   cursor?: InputMaybe<Scalars['Cursor']>;
 }>;
 
 
-export type ListTeamsQuery = { __typename?: 'Query', teamCollection?: { __typename?: 'TeamConnection', pageInfo: { __typename?: 'PageInfo', endCursor?: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null }, edges: Array<{ __typename?: 'TeamEdge', node?: { __typename?: 'Team', id: number, name?: string | null, pageUrl?: string | null, userCollection?: { __typename?: 'UserConnection', edges: Array<{ __typename?: 'UserEdge', node?: { __typename?: 'User', id: number, name?: string | null, email: string } | null }> } | null } | null }> } | null };
+export type ListTeamsQuery = { __typename?: 'Query', teamCollection?: { __typename?: 'TeamConnection', pageInfo: { __typename?: 'PageInfo', endCursor?: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null }, edges: Array<{ __typename?: 'TeamEdge', node?: { __typename?: 'Team', id: any, name?: string | null, pageUrl?: string | null, userCollection?: { __typename?: 'UserConnection', edges: Array<{ __typename?: 'UserEdge', node?: { __typename?: 'User', id: any, name?: string | null, email: string } | null }> } | null } | null }> } | null };
 
 export type ListTeamsPrevQueryVariables = Exact<{
   cursor?: InputMaybe<Scalars['Cursor']>;
 }>;
 
 
-export type ListTeamsPrevQuery = { __typename?: 'Query', teamCollection?: { __typename?: 'TeamConnection', pageInfo: { __typename?: 'PageInfo', endCursor?: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null }, edges: Array<{ __typename?: 'TeamEdge', node?: { __typename?: 'Team', id: number, name?: string | null, pageUrl?: string | null, userCollection?: { __typename?: 'UserConnection', edges: Array<{ __typename?: 'UserEdge', node?: { __typename?: 'User', id: number, name?: string | null, email: string } | null }> } | null } | null }> } | null };
+export type ListTeamsPrevQuery = { __typename?: 'Query', teamCollection?: { __typename?: 'TeamConnection', pageInfo: { __typename?: 'PageInfo', endCursor?: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null }, edges: Array<{ __typename?: 'TeamEdge', node?: { __typename?: 'Team', id: any, name?: string | null, pageUrl?: string | null, userCollection?: { __typename?: 'UserConnection', edges: Array<{ __typename?: 'UserEdge', node?: { __typename?: 'User', id: any, name?: string | null, email: string } | null }> } | null } | null }> } | null };
 
-export type TeamsInfoFragment = { __typename?: 'TeamConnection', pageInfo: { __typename?: 'PageInfo', endCursor?: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null }, edges: Array<{ __typename?: 'TeamEdge', node?: { __typename?: 'Team', id: number, name?: string | null, pageUrl?: string | null, userCollection?: { __typename?: 'UserConnection', edges: Array<{ __typename?: 'UserEdge', node?: { __typename?: 'User', id: number, name?: string | null, email: string } | null }> } | null } | null }> };
+export type TeamsInfoFragment = { __typename?: 'TeamConnection', pageInfo: { __typename?: 'PageInfo', endCursor?: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor?: string | null }, edges: Array<{ __typename?: 'TeamEdge', node?: { __typename?: 'Team', id: any, name?: string | null, pageUrl?: string | null, userCollection?: { __typename?: 'UserConnection', edges: Array<{ __typename?: 'UserEdge', node?: { __typename?: 'User', id: any, name?: string | null, email: string } | null }> } | null } | null }> };
 
 export const TeamsInfoFragmentDoc = gql`
     fragment teamsInfo on TeamConnection {
@@ -849,7 +857,7 @@ export const TeamsInfoFragmentDoc = gql`
 }
     `;
 export const LineupDocument = gql`
-    mutation lineup($teamId: Int!) {
+    mutation lineup($teamId: UUID!) {
   insertIntoQueueCollection(objects: [{teamId: $teamId, status: "RUNNING"}]) {
     records {
       id
@@ -959,11 +967,10 @@ export type CreateTeamMutationHookResult = ReturnType<typeof useCreateTeamMutati
 export type CreateTeamMutationResult = Apollo.MutationResult<CreateTeamMutation>;
 export type CreateTeamMutationOptions = Apollo.BaseMutationOptions<CreateTeamMutation, CreateTeamMutationVariables>;
 export const JoinTeamDocument = gql`
-    mutation joinTeam($teamId: Int!, $email: String!) {
+    mutation joinTeam($teamId: UUID!, $email: String!) {
   updateUserCollection(filter: {email: {eq: $email}}, set: {teamId: $teamId}) {
     records {
       id
-      teamId
       team {
         id
         name

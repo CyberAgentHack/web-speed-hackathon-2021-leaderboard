@@ -9,11 +9,10 @@ mutation createTeam ($name: String!, $pageUrl: String) {
   }
 }
 
-mutation joinTeam ($teamId: Int!, $email: String!) {
+mutation joinTeam ($teamId: UUID!, $email: String!) {
   updateUserCollection(filter: { email: { eq: $email } }, set: { teamId: $teamId }) {
     records {
       id
-      teamId
       team {
         id
         name

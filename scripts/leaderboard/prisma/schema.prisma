@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Team {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   name      String?
   pageUrl   String?
   createdAt DateTime @default(now())
@@ -23,8 +23,8 @@ model Team {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  teamId    Int?
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  teamId    String?  @db.Uuid
   email     String   @unique
   name      String?
   createdAt DateTime @default(now())
@@ -34,8 +34,8 @@ model User {
 }
 
 model Measurement {
-  id        Int      @id @default(autoincrement())
-  teamId    Int
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  teamId    String   @db.Uuid
   score     Float
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
@@ -51,8 +51,8 @@ enum QueueStatus {
 }
 
 model Queue {
-  id     Int         @id @default(autoincrement())
-  teamId Int
+  id     String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  teamId String      @db.Uuid
   status QueueStatus
   data   Json?
 

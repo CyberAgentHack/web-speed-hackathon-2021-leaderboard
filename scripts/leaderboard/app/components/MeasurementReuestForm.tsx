@@ -13,7 +13,7 @@ import {
 
 export const MeasurementRequestForm = () => {
   // TODO: display error
-  const errors = useActionData()
+  const errors = useActionData();
 
   return (
     <Flex
@@ -37,13 +37,14 @@ export const MeasurementRequestForm = () => {
         >
           Request Measurement
         </Heading>
-        <Form method='post'>
+        <Form method="post">
           {/* TODO: fetch and set teamID */}
-          <input type="hidden" value='1' name='termId' />
-          <Stack
-            direction={{ base: "column", md: "row" }}
-            spacing="12px"
-          >
+          <input
+            type="hidden"
+            value="eba2c0c1-6c2d-43f5-82f8-36ecb1410ce6"
+            name="termId"
+          />
+          <Stack direction={{ base: "column", md: "row" }} spacing="12px">
             <FormControl>
               <Input
                 variant="solid"

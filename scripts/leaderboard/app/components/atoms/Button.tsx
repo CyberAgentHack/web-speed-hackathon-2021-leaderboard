@@ -13,19 +13,22 @@ export const PrimaryButton = (
       _hover={{
         bg: "green.500",
         _disabled: {
-          bg: "green.100",
+          bg: "green.500",
+          opacity: "0.5",
         },
       }}
       _focus={{
         bg: "green.500",
         _disabled: {
-          bg: "green.100",
+          bg: "green.500",
+          opacity: "0.5",
         },
       }}
       _disabled={{
-        bg: "green.100",
+        bg: "green.500",
+        opacity: "0.5",
       }}
-      colorScheme="blue"
+      colorScheme="green"
       {...props}
     />
   );

@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
-import { authenticator, supabaseStrategy } from "~/libs/auth.server";
+import { supabaseStrategy } from "~/libs/auth.server";
 import { supabaseClient } from "~/libs/supabase.server";
-import { ActionFunction, LoaderFunction } from "@remix-run/cloudflare";
+import { LoaderFunction } from "@remix-run/cloudflare";
 import { useLoaderData } from "@remix-run/react";
 import {
   Flex,

@@ -1,6 +1,26 @@
 version: "3.8"
 
 services:
+  measure:
+    build:
+      context: .
+      dockerfile: ./scripts/measure/Dockerfile
+    entrypoint: /app/scripts/measure/docker-entrypoint.sh
+    shm_size: 2g
+    command: yarn workspace @web-speed-hackathon/measure run dev
+    volumes:
+      - ./scripts/measure:/app/scripts/measure:cached
+      - ./scripts/vrt:/app/scripts/vrt:cached
+      - ./scripts/scoring:/app/scripts/scoring:cached
+      - ./package.json:/app/package.json
+      - ./yarn.lock:/app/yarn.lock
+      - ./scripts/create-ogp/package.json:/app/scripts/create-ogp/package.json
+      - ./scripts/leaderboard/package.json:/app/scripts/leaderboard/package.json
+      - ./scripts/update-leaderboard/package.json:/app/scripts/update-leaderboard/package.json
+    ports:
+      - 8080:8080
+    tty: true
+    stdin_open: true
   db:
     image: postgres:14.2
     ports:

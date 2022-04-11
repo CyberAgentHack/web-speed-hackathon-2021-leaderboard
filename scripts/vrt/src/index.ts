@@ -1,7 +1,6 @@
 import path from 'path';
 import fs from 'fs-extra';
 import config from 'config';
-import yargs from 'yargs';
 import axios from 'axios';
 import { URL } from 'url';
 
@@ -9,15 +8,8 @@ import type { Page, ViewPort } from './types';
 import { logger } from './logger';
 import { captureScreenshot } from './capture_screenshot';
 
-async function main() {
-  const argv = await yargs
-    .option('url', {
-      type: 'string',
-      demandOption: true,
-    })
-    .help().argv;
-
-  const baseUrl = argv.url;
+export async function main(targetUrl?: string) {
+  const baseUrl = targetUrl;
 
   // Initialize
   await axios.post(new URL('/api/v1/initialize', baseUrl).href);
@@ -44,8 +36,3 @@ async function main() {
     }
   }
 }
-
-main().catch((e) => {
-  logger.error(e);
-  process.exit(1);
-});

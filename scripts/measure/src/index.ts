@@ -1,8 +1,7 @@
 import fastify from 'fastify';
-import { main as mainVrt } from '@web-speed-hackathon/vrt/src';
 import { main as mainScoring } from '@web-speed-hackathon/scoring/src';
-import { execSync } from 'child_process';
 import { updateQueueStatus, createMeasurement, fetchTeamInfo } from './database';
+import { executeVrt } from './vrt';
 
 const server = fastify();
 
@@ -17,18 +16,15 @@ server.post<{
     await updateQueueStatus(request.params.queueId, 'RUNNING');
     const team = await fetchTeamInfo(request.params.queueId);
 
-    // VRTの実行
-    await mainVrt(team.pageUrl);
-    // 差分チェック
-    // TODO: save vrt result to storage
-    execSync('reg-cli ./tmp/actual ../vrt/expected ./tmp/diff -M 0.15 -T 0.005 -I -J ./tmp/reg.json');
+    const vrtUrl = await executeVrt(request.params.queueId, team.pageUrl);
+
     // スコアの取得
     const { result } = await mainScoring(request.params.queueId, team.pageUrl);
     if ('error' in result) {
       throw result.error;
     }
     // スコアの記録
-    await createMeasurement(team.id, result.score);
+    await createMeasurement(team.id, result.score, vrtUrl);
     await updateQueueStatus(request.params.queueId, 'DONE');
 
     return result;

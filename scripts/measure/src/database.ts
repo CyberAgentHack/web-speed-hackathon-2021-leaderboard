@@ -20,8 +20,8 @@ export const updateQueueStatus = async (id: string, status: 'RUNNING' | 'FAILED'
   return data;
 }
 
-export const createMeasurement = async (teamId: string, score: number) => {
-  const { data, error } = await supabaseClient.from('Measurement').insert({teamId, score});
+export const createMeasurement = async (teamId: string, score: number, vrtUrl: string) => {
+  const { data, error } = await supabaseClient.from('Measurement').insert({teamId, score, vrtUrl});
   if (error?.message) {
     console.error(error.message);
     throw new Error(error.message);

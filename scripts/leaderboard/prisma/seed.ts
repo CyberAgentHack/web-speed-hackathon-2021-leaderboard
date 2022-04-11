@@ -47,7 +47,7 @@ async function main() {
       create: [...Array(faker.datatype.number(3))].map(() => user()),
     },
     Measurements: {
-      create: [...Array(faker.datatype.number({ min: 30, max: 50 }))].map(() =>
+      create: [...Array(faker.datatype.number({ min: 5, max: 15 }))].map(() =>
         measure()
       ),
     },

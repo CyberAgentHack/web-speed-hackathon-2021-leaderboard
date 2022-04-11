@@ -91,11 +91,11 @@ export const listTeams = async (
 > => {
   const { data } = await supabaseClient
     .from("Team")
-    .select("id, name, pageUrl, User(email, name)")
+    .select("id, name, pageUrl, users:User(email, name)")
     .range((page - 1) * 30, page * 30 - 1)
     .throwOnError();
 
-  return data?.map(({ User, ...team }) => ({ ...team, users: User })) ?? [];
+  return data ?? [];
 
   // if (!prev)
   //   return client.query<ListTeamsQuery>({
@@ -118,8 +118,7 @@ export const getMyTeam = async (variables: MyTeamQueryVariables) => {
     .from("Team")
     .select("*, User!inner(*)")
     .eq("User.email", variables.email)
-    .throwOnError()
-    .maybeSingle();
+    .single();
 
   return data;
 

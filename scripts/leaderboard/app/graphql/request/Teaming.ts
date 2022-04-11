@@ -1,49 +1,63 @@
 import { client } from "../apollo-client";
 import {
-  CreateTeamDocument,
-  CreateTeamMutation,
+  // CreateTeamDocument,
+  // CreateTeamMutation,
   CreateTeamMutationVariables,
   // JoinTeamDocument,
   // JoinTeamMutation,
   JoinTeamMutationVariables,
-  ListTeamsDocument,
-  ListTeamsPrevDocument,
-  ListTeamsPrevQuery,
-  ListTeamsQuery,
-  MyTeamDocument,
-  MyTeamQuery,
+  // ListTeamsDocument,
+  // ListTeamsPrevDocument,
+  // ListTeamsPrevQuery,
+  // ListTeamsQuery,
+  // MyTeamDocument,
+  // MyTeamQuery,
   MyTeamQueryVariables,
-  SignupDocument,
-  SignupMutation,
+  // SignupDocument,
+  // SignupMutation,
   SignupMutationVariables,
 } from "generated/graphql";
-import { ApolloError } from "@apollo/client";
+// import { ApolloError } from "@apollo/client";
 import { supabaseClient } from "~/libs/supabase.server";
 
 export const signup = async (variables: SignupMutationVariables) => {
-  try {
-    return await client.mutate<SignupMutation>({
-      mutation: SignupDocument,
-      variables,
-    });
-  } catch (e) {
-    if (e instanceof ApolloError) {
-      const error = e.graphQLErrors[0];
-      if (error.message.includes("duplicate key")) return null;
-    }
-    console.error(e);
+  const { data } = await supabaseClient
+    .from("User")
+    .upsert(variables, { onConflict: "email" })
+    .throwOnError();
+  return data;
 
-    throw e;
-  }
+  // try {
+  //   return await client.mutate<SignupMutation>({
+  //     mutation: SignupDocument,
+  //     variables,
+  //   });
+  // } catch (e) {
+  //   if (e instanceof ApolloError) {
+  //     const error = e.graphQLErrors[0];
+  //     console.log(e);
+  //     if (error.message.includes("duplicate key")) return null;
+  //   }
+  //   console.error(e);
+  //
+  //   throw e;
+  // }
 };
 
 export const createTeam = async (variables: CreateTeamMutationVariables) => {
-  return client.mutate<CreateTeamMutation>({
-    mutation: CreateTeamDocument,
-    variables,
-    refetchQueries: [{ query: ListTeamsDocument, variables: { cursor: null } }],
-    awaitRefetchQueries: true,
-  });
+  const { data } = await supabaseClient
+    .from("Team")
+    .insert(variables)
+    .throwOnError();
+
+  return data;
+
+  // return client.mutate<CreateTeamMutation>({
+  //   mutation: CreateTeamDocument,
+  //   variables,
+  //   refetchQueries: [{ query: ListTeamsDocument, variables: { cursor: null } }],
+  //   awaitRefetchQueries: true,
+  // });
 };
 
 export const joinTeam = async (variables: JoinTeamMutationVariables) => {
@@ -63,27 +77,55 @@ export const joinTeam = async (variables: JoinTeamMutationVariables) => {
   // });
 };
 
-export const listTeams = async (cursor: string | null, prev = false) => {
-  if (!prev)
-    return client.query<ListTeamsQuery>({
-      query: ListTeamsDocument,
-      variables: {
-        cursor,
-      },
-    });
-  else
-    return client.query<ListTeamsPrevQuery>({
-      query: ListTeamsPrevDocument,
-      variables: {
-        cursor,
-      },
-    });
+export const listTeams = async (
+  cursor: string | null,
+  prev = false,
+  page = 1
+): Promise<
+  {
+    users: { email: string; name: string }[];
+    id: string;
+    name: string | null;
+    pageUrl: string | null;
+  }[]
+> => {
+  const { data } = await supabaseClient
+    .from("Team")
+    .select("id, name, pageUrl, User(email, name)")
+    .range((page - 1) * 30, page * 30 - 1)
+    .throwOnError();
+
+  return data?.map(({ User, ...team }) => ({ ...team, users: User })) ?? [];
+
+  // if (!prev)
+  //   return client.query<ListTeamsQuery>({
+  //     query: ListTeamsDocument,
+  //     variables: {
+  //       cursor,
+  //     },
+  //   });
+  // else
+  //   return client.query<ListTeamsPrevQuery>({
+  //     query: ListTeamsPrevDocument,
+  //     variables: {
+  //       cursor,
+  //     },
+  //   });
 };
 
 export const getMyTeam = async (variables: MyTeamQueryVariables) => {
-  const { data } = await client.query<MyTeamQuery>({
-    query: MyTeamDocument,
-    variables,
-  });
-  return data.userCollection?.edges[0].node?.team;
+  const { data } = await supabaseClient
+    .from("Team")
+    .select("*, User!inner(*)")
+    .eq("User.email", variables.email)
+    .throwOnError()
+    .maybeSingle();
+
+  return data;
+
+  // const { data } = await client.query<MyTeamQuery>({
+  //   query: MyTeamDocument,
+  //   variables,
+  // });
+  // return data.userCollection?.edges[0].node?.team;
 };

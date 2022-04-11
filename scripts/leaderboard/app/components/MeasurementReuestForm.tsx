@@ -21,12 +21,7 @@ export const MeasurementRequestForm = ({ teamId, url }: Props) => {
   const errors = useActionData();
 
   return (
-    <Flex
-      minH="100vh"
-      align="center"
-      justify="center"
-      bg={useColorModeValue("gray.50", "gray.800")}
-    >
+    <Flex minH="100vh" align="center" justify="center">
       <Container
         maxW="lg"
         bg={useColorModeValue("white", "whiteAlpha.100")}

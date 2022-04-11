@@ -53,8 +53,8 @@ export const TeamCard = ({
 
         <Box bg={useColorModeValue("gray.50", "gray.900")} px={6} py={10}>
           <List h={"120px"} spacing={3}>
-            {members.map((member) => (
-              <ListItem key={member}>
+            {members.map((member, index) => (
+              <ListItem key={index}>
                 <ListIcon as={BsFillPersonFill} color="green.400" />
                 {member}
               </ListItem>

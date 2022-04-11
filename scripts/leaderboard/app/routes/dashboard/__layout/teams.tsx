@@ -15,16 +15,14 @@ type Data = {
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const { data } = await listTeams(null);
+  const data = await listTeams(null);
 
   return {
     teams:
-      data.teamCollection?.edges.map(({ node }) => {
-        const members =
-          node?.userCollection?.edges.map(({ node }) => node?.name ?? "") ?? [];
+      data.map(({ users, ...team }) => {
+        const members = users.map(({ name }) => name);
         return {
-          id: node?.id ?? NaN,
-          name: node?.name ?? "",
+          ...team,
           members,
           joinable: members.length < MAX_TEAM_MEMBERS,
         };
@@ -67,6 +65,7 @@ export const action: ActionFunction = async ({ request }) => {
 const Teams = () => {
   const { teams } = useLoaderData<Data>();
   const myTeam = useTeamContext();
+
   return (
     <>
       <NewTeamFormModal />

@@ -17,9 +17,10 @@ export const action: ActionFunction = async ({ request }) => {
   if (!(typeof teamId === "string" && typeof pageUrl === "string"))
     throw new Error("Invalid request");
 
-  const queues = await lineup({ teamId, pageUrl });
+  return await lineup({ teamId, pageUrl });
+  // const queues = await lineup({ teamId, pageUrl });
 
-  return queues?.data?.insertIntoQueueCollection?.records;
+  // return queues?.data?.insertIntoQueueCollection?.records;
 };
 
 const Index = () => {

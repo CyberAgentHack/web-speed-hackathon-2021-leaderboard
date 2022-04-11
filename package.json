@@ -1,6 +1,6 @@
 {
   "private": true,
-  "license": "UNLICENSE",
+  "license": "MPL-2.0",
   "scripts": {
     "build": "yarn workspaces run build",
     "vrt:capture": "yarn workspace @web-speed-hackathon/vrt capture",

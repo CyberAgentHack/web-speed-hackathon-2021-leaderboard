@@ -10,7 +10,7 @@ export const lineup = async (variables: LineupMutationVariables) => {
   return Promise.all([
     supabaseClient
       .from("Queue")
-      .insert({ teamId: variables.teamId, status: "RUNNING" })
+      .insert({ teamId: variables.teamId })
       .throwOnError(),
     supabaseClient
       .from("Team")

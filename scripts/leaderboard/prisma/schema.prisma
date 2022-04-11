@@ -53,8 +53,10 @@ enum QueueStatus {
 model Queue {
   id     String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   teamId String      @db.Uuid
-  status QueueStatus
+  status QueueStatus @default(WAITING)
   data   Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
 
   Team Team @relation(fields: [teamId], references: [id])
 }

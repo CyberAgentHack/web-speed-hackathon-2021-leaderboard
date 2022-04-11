@@ -6,6 +6,8 @@ export const getSample = async () => {
   const { data } = await supabaseClient
     .from("Queue")
     .select("id")
+    .order("createdAt", { ascending: false })
+    .limit(30)
     .throwOnError();
   return data;
 

@@ -1,8 +1,5 @@
 import {
   Button,
-  FormControl,
-  FormLabel,
-  Input,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -12,8 +9,12 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import { Form } from "@remix-run/react";
 import { PrimaryButton } from "~/components/atoms/Button";
+import {
+  NewTeamFormWrapper,
+  Submit,
+  TeamNameInput,
+} from "~/components/forms/CreateTeam";
 
 export const NewTeamFormModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -27,26 +28,15 @@ export const NewTeamFormModal = () => {
         <ModalContent>
           <ModalHeader>Create new team</ModalHeader>
           <ModalCloseButton />
-          <Form method="post" onSubmit={onClose}>
+          <NewTeamFormWrapper>
             <ModalBody pb={6}>
-              <FormControl>
-                <FormLabel>* Team Name (max 15 chars)</FormLabel>
-                <Input required type="text" name="name" maxLength={15} />
-              </FormControl>
-
-              <FormControl mt={4}>
-                <FormLabel>URL</FormLabel>
-                <Input placeholder="Your page url" type="url" name="pageUrl" />
-              </FormControl>
+              <TeamNameInput />
             </ModalBody>
-
             <ModalFooter>
-              <PrimaryButton type="submit" mr={3}>
-                Save
-              </PrimaryButton>
+              <Submit afterSubmit={onClose} />
               <Button onClick={onClose}>Cancel</Button>
             </ModalFooter>
-          </Form>
+          </NewTeamFormWrapper>
         </ModalContent>
       </Modal>
     </>

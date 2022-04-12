@@ -92,6 +92,7 @@ export const listTeams = async (
   const { data } = await supabaseClient
     .from("Team")
     .select("id, name, pageUrl, users:User(email, name)")
+    .order("createdAt", { ascending: false })
     .range((page - 1) * 30, page * 30 - 1)
     .throwOnError();
 

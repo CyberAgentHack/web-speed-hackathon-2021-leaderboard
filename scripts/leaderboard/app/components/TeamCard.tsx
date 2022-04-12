@@ -9,8 +9,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { BsFillPersonFill } from "react-icons/bs";
-import { PrimaryButton } from "~/components/atoms/Button";
-import { Form } from "@remix-run/react";
+import { JoinTeamForm } from "~/components/forms/JoinTeam";
 
 type Props = {
   id: string;
@@ -67,18 +66,7 @@ export const TeamCard = ({
             )}
           </List>
 
-          <Form method="post">
-            <input type="hidden" name="teamId" value={id} />
-            <PrimaryButton
-              mt={10}
-              w={"full"}
-              type="submit"
-              name="join"
-              disabled={!joinable || mine}
-            >
-              Join
-            </PrimaryButton>
-          </Form>
+          <JoinTeamForm teamId={id} disabled={!joinable || mine} />
         </Box>
       </Box>
     </Center>

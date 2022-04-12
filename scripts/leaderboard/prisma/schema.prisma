@@ -10,9 +10,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+generator zod {
+  provider              = "zod-prisma"
+  output                = "../app/zod"
+  imports               = "../app/zod/customs"
+  relationModel         = true
+  modelCase             = "PascalCase"
+  modelSuffix           = "Model"
+  useDecimalJs          = true
+  prismaJsonNullability = true
+}
+
 model Team {
   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  name      String?
+  /// @zod.min(3).max(15).refine(imports.strip)
+  name      String
   pageUrl   String?
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
@@ -25,6 +37,7 @@ model Team {
 model User {
   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   teamId    String?  @db.Uuid
+  /// @zod.email()
   email     String   @unique
   name      String?
   createdAt DateTime @default(now())
@@ -52,12 +65,12 @@ enum QueueStatus {
 }
 
 model Queue {
-  id     String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  teamId String      @db.Uuid
-  status QueueStatus @default(WAITING)
-  data   Json?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
+  id        String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  teamId    String      @db.Uuid
+  status    QueueStatus @default(WAITING)
+  data      Json?
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @default(now())
 
   Team Team @relation(fields: [teamId], references: [id])
 }

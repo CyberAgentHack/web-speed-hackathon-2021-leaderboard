@@ -1,6 +1,7 @@
 const { withEsbuildOverride } = require("remix-esbuild-override");
 const GlobalsPolyfills =
   require("@esbuild-plugins/node-globals-polyfill").default;
+const alias = require("esbuild-plugin-alias");
 require("dotenv").config();
 
 withEsbuildOverride((option, { isServer }) => {
@@ -18,6 +19,9 @@ withEsbuildOverride((option, { isServer }) => {
     option.plugins = [
       GlobalsPolyfills({
         buffer: true,
+      }),
+      alias({
+        jotai: require.resolve("jotai"),
       }),
       ...option.plugins,
     ];

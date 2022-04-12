@@ -1,12 +1,12 @@
 import { TeamCard } from "~/components/TeamCard";
 import { Wrap, WrapItem } from "@chakra-ui/react";
 import { useLoaderData } from "@remix-run/react";
-import { createTeam, joinTeam, listTeams } from "~/graphql/request/Teaming";
+import { listTeams } from "~/graphql/request/Teaming";
 import { ActionFunction, LoaderFunction } from "@remix-run/cloudflare";
 import { NewTeamFormModal } from "~/components/NewTeamFormModal";
-import { supabaseStrategy } from "~/libs/auth.server";
-import { AuthorizationError } from "remix-auth";
 import { useTeamContext } from "~/components/contexts/UserAndTeam";
+import { handler as newTeamHandler } from "~/components/forms/CreateTeam";
+import { handler as joinTeamHandler } from "~/components/forms/JoinTeam";
 
 const MAX_TEAM_MEMBERS = 3;
 
@@ -32,34 +32,10 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 export const action: ActionFunction = async ({ request }) => {
   const data = await request.formData();
-  const [name, pageUrl, join, teamId] = [
-    data.get("name"),
-    data.get("pageUrl"),
-    data.get("join"),
-    data.get("teamId"),
-  ];
-  if (
-    request.method === "POST" &&
-    typeof name === "string" &&
-    typeof pageUrl === "string"
-  ) {
-    return await createTeam({ name, pageUrl });
-  } else if (
-    request.method === "POST" &&
-    typeof join === "string" &&
-    typeof teamId === "string"
-  ) {
-    const session = await supabaseStrategy.checkSession(request);
-    if (!session?.user?.email)
-      throw new AuthorizationError("No user session found");
+  if (await newTeamHandler(data)) return null;
+  if (await joinTeamHandler(data)) return null;
 
-    return await joinTeam({
-      teamId,
-      email: session.user.email,
-    });
-  }
-
-  throw new Error("invalid data");
+  throw new Error("invalid request");
 };
 
 const Teams = () => {

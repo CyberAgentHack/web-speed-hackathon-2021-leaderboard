@@ -24,6 +24,7 @@ const measure = () => {
 
   return {
     score,
+    vrtUrl: 'https://example.com/archive.zip',
     createdAt: datetime,
     updatedAt: datetime,
   };

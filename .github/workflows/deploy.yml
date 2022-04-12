@@ -5,8 +5,12 @@ on:
     branches:
       - main
 
+env:
+  GCP_REGION: ${{ secrets.GCP_REGION }}
+  IMAGE: asia.gcr.io/${{ secrets.GCP_PROJECT_ID }}/web-speed-hackathon-2021-measure:${{ github.sha }}
+
 jobs:
-  deploy:
+  deploy-frontend:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,3 +28,26 @@ jobs:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+  deploy-measure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+      - id: "auth"
+        uses: "google-github-actions/auth@v0"
+        with:
+          credentials_json: "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}"
+      - name: Configure docker to use the gcloud cli
+        run: gcloud auth configure-docker --quiet
+      - name: Build a docker image
+        run: docker build -t ${{ env.IMAGE }} -f scripts/measure/Dockerfile .
+      - name: Push the docker image
+        run: docker push ${{ env.IMAGE }}
+      - name: Deploy to Cloud Run
+        id: deploy
+        uses: google-github-actions/deploy-cloudrun@v0
+        with:
+          service: web-speed-hackathon-2021-measure
+          image: ${{ env.IMAGE }}
+          region: ${{ env.GCP_REGION }}
+          env_vars: 'SUPABASE_URL="${{ secrets.SUPABASE_URL }}",SUPABASE_ANON_KEY="${{ secrets.SUPABASE_ANON_KEY }}",BUCKET_NAME="${{ secrets.BUCKET_NAME }}"'

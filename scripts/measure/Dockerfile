@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright:v1.20.0-focal
+FROM mcr.microsoft.com/playwright:v1.20.0-focal AS development
 
 RUN rm -rf /etc/localtime && ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
@@ -16,3 +16,17 @@ COPY scripts/measure/package.json ./scripts/measure/
 COPY scripts/scoring/package.json ./scripts/scoring/
 COPY scripts/vrt/package.json ./scripts/vrt/
 RUN yarn install --frozen-lockfile
+
+FROM development AS production
+
+RUN groupadd -g 1001 nodejs
+RUN useradd -u 1001 --gid 1001 fastify
+
+COPY --chown=fastify:nodejs scripts/measure ./scripts/measure
+COPY --chown=fastify:nodejs scripts/scoring ./scripts/scoring
+COPY --chown=fastify:nodejs scripts/vrt ./scripts/vrt
+RUN yarn workspaces run build && chown -R fastify:nodejs /app
+
+USER fastify
+
+CMD ["yarn", "start:measure"]

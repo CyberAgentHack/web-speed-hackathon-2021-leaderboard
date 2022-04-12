@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import { execSync } from 'child_process';
 import archiver from 'archiver';
 import { Storage } from '@google-cloud/storage';
-import { main as mainVrt } from '@web-speed-hackathon/vrt/src';
+import { main as mainVrt } from '@web-speed-hackathon/vrt';
 
 export const executeVrt = async (id: string, url: string) => {
   // VRTの実行
@@ -28,7 +28,7 @@ const uploadVrt = async (id: string) => {
 
   // Google Cloud Storageにアップロード
   const storage = new Storage();
-  const bucket = storage.bucket(process.env.BUCKET_NAME);
+  const bucket = storage.bucket(process.env['BUCKET_NAME'] || '');
   const uploadResponse = await bucket.upload(
     zipPath,
     {

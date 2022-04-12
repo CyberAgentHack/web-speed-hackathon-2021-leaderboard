@@ -7,7 +7,8 @@
     "vrt:detect": "yarn workspace @web-speed-hackathon/vrt detect",
     "scoring": "yarn workspace @web-speed-hackathon/scoring start",
     "update": "yarn workspace @web-speed-hackathon/update-leaderboard start",
-    "create-ogp": "yarn workspace @web-speed-hackathon/create-ogp start"
+    "create-ogp": "yarn workspace @web-speed-hackathon/create-ogp start",
+    "start:measure": "yarn workspace @web-speed-hackathon/measure start"
   },
   "workspaces": [
     "scripts/*"

@@ -4,6 +4,7 @@ services:
   measure:
     build:
       context: .
+      target: development
       dockerfile: ./scripts/measure/Dockerfile
     entrypoint: /app/scripts/measure/docker-entrypoint.sh
     shm_size: 2g

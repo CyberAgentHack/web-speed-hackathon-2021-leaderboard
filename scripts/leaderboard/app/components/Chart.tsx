@@ -25,11 +25,18 @@ export const Chart = ({ data }: Props) => {
         <XAxis
           dataKey="createdAt"
           domain={["dataMin", "dataMax"]}
-          tickFormatter={(unixTime) => new Date(unixTime).toLocaleString()}
+          tickFormatter={(unixTime) =>
+            new Date(unixTime).toLocaleString().slice(0, -3)
+          }
           type="number"
         />
         <YAxis dataKey="score" />
-        <Tooltip />
+        <Tooltip
+          labelStyle={{ color: "gray" }}
+          labelFormatter={(unixTime) =>
+            new Date(unixTime).toLocaleString().slice(0, -3)
+          }
+        />
         <Legend />
         {data.map(({ id, name, data }) => (
           <Line

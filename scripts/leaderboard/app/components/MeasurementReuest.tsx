@@ -1,10 +1,4 @@
-import {
-  Stack,
-  FormControl,
-  useColorModeValue,
-  Heading,
-  Container,
-} from "@chakra-ui/react";
+import { Stack, FormControl, Heading, Box } from "@chakra-ui/react";
 import {
   MeasureRequestFormWrapper,
   PageUrlInput,
@@ -18,13 +12,7 @@ type Props = {
 
 export const MeasurementRequest = ({ teamId, url }: Props) => {
   return (
-    <Container
-      maxW="lg"
-      bg={useColorModeValue("white", "whiteAlpha.100")}
-      boxShadow="xl"
-      rounded="lg"
-      p={6}
-    >
+    <Box rounded="lg" p={6} borderWidth={2} w="full" maxH="160px">
       <Heading
         as="h2"
         fontSize={{ base: "xl", sm: "2xl" }}
@@ -42,6 +30,6 @@ export const MeasurementRequest = ({ teamId, url }: Props) => {
           </FormControl>
         </Stack>
       </MeasureRequestFormWrapper>
-    </Container>
+    </Box>
   );
 };

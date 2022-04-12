@@ -1,6 +1,5 @@
 import { MeasurementRequest } from "~/components/MeasurementReuest";
 import { ActionFunction, LoaderFunction } from "@remix-run/cloudflare";
-import { getSample } from "~/graphql/request/Sample";
 import { useTeamContext } from "~/components/contexts/UserAndTeam";
 import { scoresForGraph } from "~/graphql/request/Measurement";
 import { Chart } from "~/components/Chart";
@@ -12,22 +11,30 @@ import {
   FormControl,
   FormLabel,
   Flex,
+  Stack,
   Spacer,
 } from "@chakra-ui/react";
 import { ObserveMeasurementsAndRefresh } from "~/components/ObserveMeasurements";
 import { Ranking } from "~/components/Ranking";
 import { useReducer } from "react";
 import { handler } from "~/components/forms/MeasureRequest";
+import { QueueList } from "~/QueueList";
+import { myQueues } from "~/graphql/request/Queue";
+import { supabaseStrategy } from "~/libs/auth.server";
+import { promiseHash } from "remix-utils";
 
 type Data = {
   scores: Awaited<ReturnType<typeof scoresForGraph>>;
+  queues: Awaited<ReturnType<typeof myQueues>>;
 };
 
-export const loader: LoaderFunction = async () => {
-  const [test, scores] = await Promise.all([getSample(), scoresForGraph()]);
-  console.log(test);
+export const loader: LoaderFunction = async ({ request }) => {
+  const session = await supabaseStrategy.checkSession(request);
 
-  return { scores };
+  return promiseHash({
+    queues: myQueues({ email: session?.user?.email ?? "" }),
+    scores: scoresForGraph(),
+  });
 };
 
 export const action: ActionFunction = async ({ request }) => {
@@ -39,16 +46,17 @@ export const action: ActionFunction = async ({ request }) => {
 
 const Index = () => {
   const team = useTeamContext();
-  const { scores } = useLoaderData<Data>();
+  const { scores, queues } = useLoaderData<Data>();
   const [flag, toggle] = useReducer((s) => !s, false);
   if (!team) return null;
 
   return (
     <>
-      <MeasurementRequest teamId={team.id} url={team.pageUrl ?? ""} />
-      <Box height="500px" mt={8}>
+      <Box height="500px">
         <Flex alignItems="end" mb={4}>
-          <Heading as="h2">Score</Heading>
+          <Heading as="h2" fontSize={{ base: "xl", sm: "2xl" }}>
+            Score
+          </Heading>
           <Spacer />
           <Box>
             <FormControl display="flex" alignItems="center">
@@ -63,6 +71,10 @@ const Index = () => {
         {flag ? <Ranking data={scores} /> : <Chart data={scores} />}
         <ObserveMeasurementsAndRefresh />
       </Box>
+      <Stack direction={["column", "row"]} mt={32} spacing={8}>
+        <MeasurementRequest teamId={team.id} url={team.pageUrl ?? ""} />
+        <QueueList queues={queues} />
+      </Stack>
     </>
   );
 };

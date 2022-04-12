@@ -8,7 +8,7 @@ export const PrimaryButton = (
     <Button
       bg={"green.400"}
       color={"white"}
-      rounded={"xl"}
+      rounded={"md"}
       boxShadow={"0 5px 20px 0px rgb(72 187 120 / 43%)"}
       _hover={{
         bg: "green.500",

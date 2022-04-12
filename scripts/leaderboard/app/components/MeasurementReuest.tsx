@@ -1,0 +1,47 @@
+import {
+  Stack,
+  FormControl,
+  useColorModeValue,
+  Heading,
+  Container,
+} from "@chakra-ui/react";
+import {
+  MeasureRequestFormWrapper,
+  PageUrlInput,
+  Submit,
+} from "~/components/forms/MeasureRequest";
+
+type Props = {
+  teamId: string;
+  url?: string;
+};
+
+export const MeasurementRequest = ({ teamId, url }: Props) => {
+  return (
+    <Container
+      maxW="lg"
+      bg={useColorModeValue("white", "whiteAlpha.100")}
+      boxShadow="xl"
+      rounded="lg"
+      p={6}
+    >
+      <Heading
+        as="h2"
+        fontSize={{ base: "xl", sm: "2xl" }}
+        textAlign="center"
+        mb={5}
+      >
+        Request Measurement
+      </Heading>
+      <MeasureRequestFormWrapper defaultValues={{ pageUrl: url }}>
+        <input type="hidden" value={teamId} name="teamId" />
+        <Stack direction={{ base: "column", md: "row" }} spacing="12px">
+          <PageUrlInput placeholder="Your Page URL" />
+          <FormControl w={{ base: "100%", md: "40%" }}>
+            <Submit w="full" />
+          </FormControl>
+        </Stack>
+      </MeasureRequestFormWrapper>
+    </Container>
+  );
+};

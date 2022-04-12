@@ -25,6 +25,7 @@ model Team {
   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   /// @zod.min(3).max(15).refine(imports.strip)
   name      String
+  /// @zod.url()
   pageUrl   String?
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())

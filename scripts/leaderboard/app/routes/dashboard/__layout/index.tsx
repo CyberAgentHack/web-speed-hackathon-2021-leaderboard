@@ -1,7 +1,6 @@
-import { MeasurementRequestForm } from "~/components/MeasurementReuestForm";
+import { MeasurementRequest } from "~/components/MeasurementReuest";
 import { ActionFunction, LoaderFunction } from "@remix-run/cloudflare";
 import { getSample } from "~/graphql/request/Sample";
-import { lineup } from "~/graphql/request/Queue";
 import { useTeamContext } from "~/components/contexts/UserAndTeam";
 import { scoresForGraph } from "~/graphql/request/Measurement";
 import { Chart } from "~/components/Chart";
@@ -17,7 +16,8 @@ import {
 } from "@chakra-ui/react";
 import { ObserveMeasurementsAndRefresh } from "~/components/ObserveMeasurements";
 import { Ranking } from "~/components/Ranking";
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
+import { handler } from "~/components/forms/MeasureRequest";
 
 type Data = {
   scores: Awaited<ReturnType<typeof scoresForGraph>>;
@@ -31,15 +31,10 @@ export const loader: LoaderFunction = async () => {
 };
 
 export const action: ActionFunction = async ({ request }) => {
-  const form = await request.formData();
-  const [teamId, pageUrl] = [form.get("termId"), form.get("pageUrl")];
-  if (!(typeof teamId === "string" && typeof pageUrl === "string"))
-    throw new Error("Invalid request");
+  const data = await request.formData();
+  if (await handler(data)) return null;
 
-  return await lineup({ teamId, pageUrl });
-  // const queues = await lineup({ teamId, pageUrl });
-
-  // return queues?.data?.insertIntoQueueCollection?.records;
+  throw new Error("invalid request");
 };
 
 const Index = () => {
@@ -50,7 +45,7 @@ const Index = () => {
 
   return (
     <>
-      <MeasurementRequestForm teamId={team.id} url={team.pageUrl ?? ""} />
+      <MeasurementRequest teamId={team.id} url={team.pageUrl ?? ""} />
       <Box height="500px" mt={8}>
         <Flex alignItems="end" mb={4}>
           <Heading as="h2">Score</Heading>

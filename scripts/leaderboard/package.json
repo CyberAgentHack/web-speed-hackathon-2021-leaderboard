@@ -42,7 +42,8 @@
     "react-icons": "^4.3.1",
     "recharts": "^2.1.9",
     "remix-auth": "^3.2.1",
-    "remix-auth-supabase": "^3.1.0"
+    "remix-auth-supabase": "^3.1.0",
+    "remix-utils": "^3.0.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.4.0",

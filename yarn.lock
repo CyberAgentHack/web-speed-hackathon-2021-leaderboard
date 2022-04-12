@@ -10125,6 +10125,17 @@ remix-utils@^2.2.0:
     type-fest "^2.5.2"
     uuid "^8.3.2"
 
+remix-utils@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/remix-utils/-/remix-utils-3.0.0.tgz#49bc613781c19b63a0c61c53d770014d4147ff86"
+  integrity sha512-2LLE0o9pmvbKl1f/APk3o4PPEljFmYly3jL1P2BJCtGTseESKb/JVnAYitaJh/K9uMp+8h7WwqTbMan6loHPPg==
+  dependencies:
+    intl-parse-accept-language "^1.0.0"
+    is-ip "^3.1.0"
+    schema-dts "^1.1.0"
+    type-fest "^2.5.2"
+    uuid "^8.3.2"
+
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"

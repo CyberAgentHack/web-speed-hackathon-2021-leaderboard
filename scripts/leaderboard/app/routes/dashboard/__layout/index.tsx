@@ -7,6 +7,7 @@ import { scoresForGraph } from "~/graphql/request/Measurement";
 import { Chart } from "~/components/Chart";
 import { useLoaderData } from "@remix-run/react";
 import { Box, Heading } from "@chakra-ui/react";
+import { ObserveMeasurementsAndRefresh } from "~/components/ObserveMeasurements";
 
 type Data = {
   scores: Awaited<ReturnType<typeof scoresForGraph>>;
@@ -44,6 +45,7 @@ const Index = () => {
           Score
         </Heading>
         <Chart data={scores} />
+        <ObserveMeasurementsAndRefresh />
       </Box>
     </>
   );

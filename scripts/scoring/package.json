@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "chrome-launcher": "0.15.0",
-    "js-yaml": "^4.1.0",
+    "js-yaml": "^4.3.2",
     "lighthouse": "9.0.0",
     "lodash.floor": "4.0.4",
     "node-fetch": "2.6.6",

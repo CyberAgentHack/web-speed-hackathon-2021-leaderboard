@@ -10,7 +10,7 @@
     "capture": "node dist/index.js"
   },
   "dependencies": {
-    "axios": "0.24.0",
+    "axios": "0.34.0",
     "chrome-launcher": "0.15.0",
     "config": "3.3.6",
     "fs-extra": "10.0.0",
